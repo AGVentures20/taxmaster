@@ -3,311 +3,1281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gebruiksvoorwaarden - Tax Master</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta name="color-scheme" content="light dark">
+    <meta name="description"
+          content="Gebruiksvoorwaarden van Tax Master: indicatieve fiscale simulaties, verantwoord gebruik, updates, rechten en contact.">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            padding: 20px;
-            line-height: 1.7;
-            color: #1E293B;
-            background-color: #FFFFFF;
-            font-size: 15px;
+    <title>Gebruiksvoorwaarden - Tax Master</title>
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --text: #1E293B;
+            --muted: #475569;
+            --heading: #0F172A;
+            --border: #E2E8F0;
+            --link: #1D4ED8;
+            --info-background: #F1F5F9;
+            --info-border: #64748B;
+            --privacy-background: #EFF6FF;
+            --privacy-border: #2563EB;
+            --important-background: #FFFBEB;
+            --important-border: #D97706;
         }
 
-        h1 { font-size: 28px; font-weight: 700; color: #0F172A; margin-bottom: 12px; line-height: 1.3; }
-        h2 { font-size: 22px; font-weight: 700; color: #0F172A; margin-top: 36px; margin-bottom: 14px; border-bottom: 2px solid #E2E8F0; padding-bottom: 8px; }
-        h3 { font-size: 18px; font-weight: 600; color: #334155; margin-top: 28px; margin-bottom: 10px; }
-        p { margin-bottom: 14px; color: #475569; }
-        ul, ol { margin-left: 24px; margin-bottom: 16px; }
-        li { margin-bottom: 8px; color: #475569; padding-left: 4px; }
-        strong, b { font-weight: 600; color: #0F172A; }
-        .date { font-size: 13px; color: #64748B; margin-bottom: 24px; font-style: italic; }
-        .important-box { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 20px 0; border-radius: 4px; }
-        .info-box { background-color: #F1F5F9; border-left: 4px solid #64748B; padding: 16px; margin: 20px 0; border-radius: 4px; }
-        a { color: #2563EB; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        hr { border: none; border-top: 1px solid #E2E8F0; margin: 32px 0; }
-        .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #E2E8F0; text-align: center; color: #64748B; font-size: 13px; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--background);
+            overflow-wrap: anywhere;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--heading);
+            line-height: 1.35;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+
+        h2 {
+            margin: 36px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            font-size: 22px;
+        }
+
+        h3 {
+            margin: 24px 0 10px;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        ul,
+        ol {
+            margin: 0 0 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--link);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        address {
+            color: var(--muted);
+            font-style: normal;
+        }
+
+        .date {
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .info-box,
+        .privacy-box,
+        .important-box {
+            margin: 20px 0;
+            padding: 16px;
+            border-left: 4px solid;
+            border-radius: 6px;
+        }
+
+        .info-box {
+            background-color: var(--info-background);
+            border-color: var(--info-border);
+        }
+
+        .privacy-box {
+            background-color: var(--privacy-background);
+            border-color: var(--privacy-border);
+        }
+
+        .important-box {
+            background-color: var(--important-background);
+            border-color: var(--important-border);
+        }
+
+        .info-box > :last-child,
+        .privacy-box > :last-child,
+        .important-box > :last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0F172A;
+                --text: #E2E8F0;
+                --muted: #CBD5E1;
+                --heading: #F8FAFC;
+                --border: #334155;
+                --link: #93C5FD;
+                --info-background: #1E293B;
+                --info-border: #94A3B8;
+                --privacy-background: #172554;
+                --privacy-border: #60A5FA;
+                --important-background: #30230F;
+                --important-border: #FBBF24;
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                color: #000000;
+                background: #FFFFFF;
+            }
+
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            address,
+            a {
+                color: #000000;
+            }
+
+            .info-box,
+            .privacy-box,
+            .important-box {
+                background: #FFFFFF;
+            }
+        }
     </style>
 </head>
+
 <body>
-
-<h1>Gebruiksvoorwaarden - Tax Master</h1>
-
-<p class="date">
-    Laatste wijziging: 13 november 2026<br>
-    Ingangsdatum: 13 november 2026
-</p>
-
-<h2>1. Wie wij zijn</h2>
-
-<p>Deze gebruiksvoorwaarden (“Voorwaarden”) regelen het gebruik van de mobiele applicatie <strong>Tax Master</strong> (“Tax Master”, “de app”, “wij”, “ons”, “onze”).</p>
-
-<p>Tax Master wordt aangeboden door:</p>
-
-<div class="info-box">
-    <p>
-        <strong>Tax Master / Illimani Studio</strong><br>
-        Gent, België<br>
-        E-mail: <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>
-    </p>
-</div>
-
-<div class="important-box">
-    <p><strong>Belangrijk:</strong> Tax Master is een onafhankelijke, niet-officiële applicatie. Tax Master is niet gelieerd aan, goedgekeurd door, gesponsord door, beheerd door of gemachtigd door de Federale Overheidsdienst Financiën (FOD Financiën), MyMinfin, Tax-on-web, de Belgische overheid of enige andere overheidsinstantie.</p>
-
-    <p>Tax Master biedt algemene, informatieve ondersteuning bij het organiseren en begrijpen van fiscale informatie. De app biedt geen persoonlijk fiscaal, juridisch, boekhoudkundig of financieel advies en vervangt de officiële belastingaangifte, MyMinfin of Tax-on-web niet.</p>
-</div>
-
-<h2>2. Aanvaarding van de Voorwaarden</h2>
-
-<p>Door Tax Master te downloaden, installeren, openen of gebruiken, verklaar je dat je deze Voorwaarden hebt gelezen, begrepen en aanvaard.</p>
-
-<p>Als je niet akkoord gaat met deze Voorwaarden, mag je Tax Master niet gebruiken en moet je de app van je toestel verwijderen.</p>
-
-<p>Als je jonger bent dan 16 jaar, mag je Tax Master alleen gebruiken met toestemming van een ouder, voogd of andere wettelijke vertegenwoordiger.</p>
-
-<h2>3. Geen account nodig</h2>
-
-<p>Tax Master vereist geen account, gebruikersnaam, e-mailadres of wachtwoord. Je kunt de app gebruiken zonder je persoonlijk te registreren.</p>
-
-<p>Hoe Tax Master gegevens verwerkt, welke gegevens lokaal blijven en welke optionele gegevens worden verzonden, vind je in ons <a href="https://maurofinmaster.github.io/taxmaster/privacy.html" target="_blank" rel="noopener">Privacybeleid</a>.</p>
-
-<h2>4. Wat Tax Master doet</h2>
-
-<p>Tax Master kan onder meer helpen bij:</p>
-
-<ul>
-    <li>Het structureren van fiscale informatie via vragen en stappen;</li>
-    <li>Het maken van indicatieve berekeningen op basis van de fiscale informatie die jij zelf invoert;</li>
-    <li>Het tonen van uitleg, overzichten en resultaten binnen de app;</li>
-    <li>Het raadplegen van officiële Belgische overheidsinformatie via externe links;</li>
-    <li>Het versturen van optionele feedback om de app te verbeteren.</li>
-</ul>
-
-<p>De app is bedoeld als hulpmiddel bij de voorbereiding en het begrip van fiscale informatie. Ze is geen officiële aangiftetool en verzendt geen belastingaangifte naar de FOD Financiën.</p>
-
-<h2>5. Geen officiële dienst</h2>
-
-<div class="important-box">
-    <p>Tax Master is geen officiële website, applicatie of dienst van de Belgische overheid.</p>
-
-    <p>Tax Master is niet gelieerd aan de FOD Financiën, MyMinfin, Tax-on-web, FPS Finance, de Belgische regering of enige andere overheidsinstantie.</p>
-
-    <p>De app verzendt geen officiële belastingaangifte, geen fiscale fiche, geen rijksregisternummer, geen bankgegevens en geen andere officiële documenten naar de overheid.</p>
-</div>
-
-<p>Voor officiële informatie, officiële berekeningen en het indienen van je belastingaangifte gebruik je uitsluitend de officiële websites en diensten van de Belgische overheid, waaronder:</p>
-
-<ul>
-    <li><a href="https://financien.belgium.be" target="_blank" rel="noopener">FOD Financiën</a></li>
-    <li><a href="https://financien.belgium.be/nl/particulieren/belastingaangifte" target="_blank" rel="noopener">Mijn belastingaangifte - FOD Financiën</a></li>
-    <li><a href="https://myminfin.fgov.be" target="_blank" rel="noopener">MyMinfin</a></li>
-</ul>
-
-<p>Tax Master is niet verantwoordelijk voor de beschikbaarheid, inhoud, juistheid, updates of voorwaarden van externe websites. Wanneer je een externe link opent, verlaat je Tax Master en gelden de voorwaarden en het privacybeleid van die website.</p>
-
-<h2>6. Geen professioneel advies</h2>
-
-<p>Tax Master biedt geen persoonlijk fiscaal, juridisch, boekhoudkundig, financieel of belastingadvies.</p>
-
-<p>De app biedt geen garantie dat:</p>
-
-<ul>
-    <li>je bepaalde belastingvoordelen, aftrekposten, terugbetalingen of verminderde belastingen verkrijgt;</li>
-    <li>een berekening volledig, actueel, foutloos of geschikt is voor jouw persoonlijke situatie;</li>
-    <li>alle uitzonderingen, bijzondere regels, recente wetswijzigingen of specifieke fiscale situaties correct worden behandeld;</li>
-    <li>je geen boetes, interesten, correcties of sancties ontvangt;</li>
-    <li>je belastingaangifte correct, volledig of tijdig wordt ingediend.</li>
-</ul>
-
-<p>De resultaten in Tax Master zijn indicatief. Ze kunnen niet alle persoonlijke omstandigheden, wetswijzigingen, uitzonderingen, regionale regels of specifieke fiscale situaties weerspiegelen.</p>
-
-<p>Bij complexe situaties, hoge bedragen, buitenlandse inkomsten, ondernemingsactiviteiten, vastgoed, erfgoed, scheiding, overlijden, internationale situaties of twijfel over je fiscale verplichtingen, raadpleeg je best een erkende belastingadviseur, fiscalist, accountant of de FOD Financiën.</p>
-
-<h2>7. Jouw verantwoordelijkheden</h2>
-
-<p>Jij blijft als enige verantwoordelijk voor:</p>
-
-<ul>
-    <li>De juistheid, volledigheid en actualiteit van alle informatie die je in Tax Master invoert;</li>
-    <li>Het controleren van de resultaten, uitleg en berekeningen die de app toont;</li>
-    <li>Het correct invullen en indienen van je officiële belastingaangifte;</li>
-    <li>Het naleven van alle toepasselijke Belgische belastingwetten, regels en deadlines;</li>
-    <li>Het bewaren van kopieën, documenten, fiscale fiches en bewijsstukken;</li>
-    <li>Het beschermen van je toestel, wachtwoorden en schermvergrendeling.</li>
-</ul>
-
-<p>Gebruik Tax Master nooit als enige basis voor een belastingaangifte, fiscale beslissing of financiële beslissing.</p>
-
-<h2>8. Fiscale gegevens blijven lokaal</h2>
-
-<div class="privacy-box">
-    <p><strong>Lokale gegevensopslag:</strong></p>
-    <ul>
-        <li>Jouw fiscale antwoorden, berekeningsresultaten, simulatiegegevens en conceptgegevens worden uitsluitend lokaal op je Android-toestel opgeslagen.</li>
-        <li>Tax Master verzendt deze fiscale antwoorden en berekeningsresultaten niet naar Firebase, Firestore of een server van Tax Master.</li>
-        <li>Tax Master verkoopt, deelt of gebruikt deze gegevens niet voor advertenties, marketing of profilering.</li>
-    </ul>
-</div>
-
-<p>Je kunt je lokale fiscale gegevens verwijderen door de app van je toestel te verwijderen of door de beschikbare verwijderopties in de app te gebruiken.</p>
-
-<h2>9. Optionele feedback</h2>
-
-<p>Je kunt optioneel feedback geven over een specifieke vraag of algemene feedback versturen via het feedbackscherm.</p>
-
-<p>Feedback wordt alleen verzonden nadat jij expliciet hebt bevestigd dat je begrijpt dat je feedback en beperkte technische gegevens worden bewaard om Tax Master te verbeteren.</p>
-
-<p>Voor feedback over een vraag worden uitsluitend verzonden:</p>
-
-<ul>
-    <li>De identificatie van de vraag;</li>
-    <li>De versie van de vraag;</li>
-    <li>Het type feedback;</li>
-    <li>Het tijdstip waarop jij de feedback hebt aangemaakt;</li>
-    <li>De appversie;</li>
-    <li>De taalinstelling van je toestel.</li>
-</ul>
-
-<p>Voor algemene feedback worden uitsluitend verzonden:</p>
-
-<ul>
-    <li>De feedbacktekst die jij zelf invoert;</li>
-    <li>Het tijdstip waarop jij de feedback hebt aangemaakt;</li>
-    <li>De appversie;</li>
-    <li>De taalinstelling van je toestel.</li>
-</ul>
-
-<div class="important-box">
-    <p><strong>Deel geen gevoelige gegevens in feedback.</strong> Voeg geen rijksregisternummer, bankrekeningnummer, wachtwoord, fiscale fiche, volledige belastingaangifte, identiteitsdocument, adres, telefoonnummer of andere gevoelige persoonlijke of fiscale gegevens toe aan je feedback.</p>
-</div>
-
-<p>Feedback wordt via Firebase Firestore verzonden en bewaard om Tax Master te verbeteren. Meer informatie vind je in ons <a href="https://maurofinmaster.github.io/taxmaster/privacy.html" target="_blank" rel="noopener">Privacybeleid</a>.</p>
-
-<h2>10. Aanvaardbaar gebruik</h2>
-
-<p>Je stemt ermee in Tax Master uitsluitend wettelijk en behoorlijk te gebruiken. Je mag de app niet gebruiken om:</p>
-
-<ul>
-    <li>Wetgeving, rechten van anderen of rechten van intellectuele-eigenaars te schenden;</li>
-    <li>Fraude, identiteitsdiefstal, phishing, spam, malware of andere schadelijke activiteiten te plegen;</li>
-    <li>Beveiligingsmaatregelen te omzeilen;</li>
-    <li>Ongeautoriseerde toegang te verkrijgen tot systemen, servers, databases of accounts;</li>
-    <li>De app te kopiëren, te modificeren, te reverse-engineeren, te decompileren of afgeleide werken te maken, behalve voor zover dit door de wet is toegestaan;</li>
-    <li>De app te herverdelen, te verkopen, te sublicentiëren of commercieel te exploiteren zonder onze voorafgaande schriftelijke toestemming.</li>
-</ul>
-
-<p>Wij kunnen de toegang tot bepaalde functies beperken of de app niet langer beschikbaar stellen als wij redelijkerwijs vaststellen dat deze Voorwaarden of de toepasselijke wetgeving worden geschonden.</p>
-
-<h2>11. Intellectuele eigendom</h2>
-
-<p>Alle rechten op Tax Master, waaronder software, broncode, ontwerp, interface, teksten, logo’s, grafisch materiaal, databasestructuren en andere inhoud, behoren toe aan Tax Master / Illimani Studio of aan de rechthebbende licentiegever.</p>
-
-<p>Wij verlenen jou een beperkte, niet-exclusieve, niet-overdraagbare en herroepbare licentie om Tax Master op je eigen Android-toestel te installeren en te gebruiken voor persoonlijk, niet-commercieel gebruik.</p>
-
-<p>Je mag de app niet kopiëren, aanpassen, distribueren, verkopen, sublicentiëren of afgeleide werken maken zonder onze voorafgaande schriftelijke toestemming, behalve voor zover de wet dit toestaat.</p>
-
-<h2>12. Updates en beschikbaarheid</h2>
-
-<p>Wij streven ernaar Tax Master bruikbaar, veilig en actueel te houden, maar garanderen geen ononderbroken, foutloze of altijd beschikbare dienst.</p>
-
-<p>Wij kunnen de app, functies, inhoud, fiscale datasets of ondersteunde belastingjaren op elk moment wijzigen, onderbreken, beperken of stopzetten.</p>
-
-<p>Updates kunnen nodig zijn voor beveiliging, foutcorrecties, nieuwe functies of nieuwe fiscale informatie. Afhankelijk van je toestelinstellingen kunnen updates automatisch worden geïnstalleerd.</p>
-
-<p>Oudere versies van de app kunnen na verloop van tijd niet meer correct werken of niet langer worden ondersteund.</p>
-
-<h2>13. Diensten van derden</h2>
-
-<p>Tax Master gebruikt onder meer Google Firebase voor technische analyse en optionele feedbackopslag. Google kan technische gegevens, apparaatgegevens, app-versie, IP-adres, crash- of systeemactiviteit en gebruiksgegevens verwerken in het kader van zijn diensten.</p>
-
-<p>Tax Master gebruikt geen advertentienetwerken en verkoopt geen gegevens.</p>
-
-<p>Meer informatie over de verwerking door Google vind je in het <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacybeleid van Google</a>.</p>
-
-<p>Tax Master is niet verantwoordelijk voor de inhoud, het beleid, de beschikbaarheid of de voorwaarden van diensten van derden of externe websites.</p>
-
-<h2>14. Garanties</h2>
-
-<p>Tax Master wordt aangeboden “zoals ze is” en “zoals beschikbaar”.</p>
-
-<p>Wij geven, voor zover wettelijk toegestaan, geen garanties met betrekking tot:</p>
-
-<ul>
-    <li>De nauwkeurigheid, volledigheid, betrouwbaarheid of actualiteit van de app;</li>
-    <li>De juistheid van berekeningen, resultaten of fiscale uitleg;</li>
-    <li>De beschikbaarheid, veiligheid of foutloze werking van de app;</li>
-    <li>De compatibiliteit met elk toestel, elke Android-versie of elke toekomstige update;</li>
-    <li>Het behoud van lokaal opgeslagen gegevens bij toestelverlies, beschadiging, herstel, softwarefouten of verwijdering van de app.</li>
-</ul>
-
-<p>Maak altijd back-ups van belangrijke documenten en controleer fiscale informatie via officiële bronnen.</p>
-
-<h2>15. Aansprakelijkheid</h2>
-
-<p>Voor zover wettelijk toegestaan, zijn Tax Master / Illimani Studio en haar beheerders niet aansprakelijk voor:</p>
-
-<ul>
-    <li>Indirecte, incidentele, bijzondere of gevolgschade;</li>
-    <li>Verlies van belastingvoordelen, terugbetalingen, boetes, interesten, sancties of fiscale nadelige gevolgen;</li>
-    <li>Schade ontstaan door verkeerde, onvolledige of verouderde informatie die jij invoert;</li>
-    <li>Beslissingen die jij neemt op basis van resultaten, uitleg of informatie in de app;</li>
-    <li>Verlies, beschadiging of ontoegankelijkheid van lokaal opgeslagen gegevens;</li>
-    <li>Problemen veroorzaakt door diensten van derden, internetverbindingen, toestellen, besturingssystemen of externe websites.</li>
-</ul>
-
-<p>Waar aansprakelijkheid wettelijk niet volledig kan worden uitgesloten, blijft die beperkt tot het bedrag dat jij in de twaalf maanden vóór de gebeurtenis aan Tax Master hebt betaald. Zolang Tax Master gratis is, is dit bedrag nul euro.</p>
-
-<p>Deze beperking geldt niet waar dat door dwingend recht niet is toegestaan, bijvoorbeeld bij opzet, grove nalatigheid of aansprakelijkheid voor lichamelijke schade.</p>
-
-<h2>16. Beëindiging</h2>
-
-<p>Je kunt op elk moment stoppen met Tax Master door de app van je toestel te verwijderen.</p>
-
-<p>Wij kunnen de app of bepaalde functies opschorten, beperken of beëindigen als wij redelijkerwijs vaststellen dat je deze Voorwaarden of de toepasselijke wetgeving schendt, of om technische, veiligheids- of juridische redenen.</p>
-
-<p>Na beëindiging blijven de bepalingen over intellectuele eigendom, aansprakelijkheid, beperking van aansprakelijkheid en toepasselijk recht van kracht.</p>
-
-<h2>17. Wijzigingen</h2>
-
-<p>Wij kunnen deze Voorwaarden aanpassen wanneer onze app, functies, technologie, wetgeving of beveiligingspraktijken wijzigen.</p>
-
-<p>De datum “Laatste wijziging” bovenaan deze pagina wordt aangepast bij elke wijziging. Door Tax Master te blijven gebruiken na een wijziging, aanvaard je de bijgewerkte Voorwaarden.</p>
-
-<h2>18. Toepasselijk recht</h2>
-
-<p>Op deze Voorwaarden is het Belgische recht van toepassing.</p>
-
-<p>Voor geschillen die voortvloeien uit of verband houden met deze Voorwaarden of het gebruik van Tax Master, zijn de bevoegde rechtbanken in België bevoegd, tenzij dwingend recht anders bepaalt.</p>
-
-<h2>19. Contact</h2>
-
-<div class="info-box">
-    <p>
-        <strong>Tax Master / Illimani Studio</strong><br>
-        Ondersteuning en vragen<br>
-        E-mail: <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a><br>
-        Locatie: Gent, België
-    </p>
-</div>
-
-<h2>20. Belangrijke herinnering</h2>
-
-<div class="important-box">
-    <p><strong>Tax Master is een hulpmiddel, geen beslisser.</strong> Controleer belangrijke fiscale informatie altijd via officiële bronnen en baseer kritieke belastingbeslissingen nooit uitsluitend op Tax Master.</p>
-
-    <p>Voor officiële informatie en het indienen van je belastingaangifte: <a href="https://financien.belgium.be/nl/particulieren/belastingaangifte" target="_blank" rel="noopener">Mijn belastingaangifte - FOD Financiën</a>.</p>
-</div>
-
-<hr>
-
-<div class="footer">
-    <p>Door Tax Master te installeren of te gebruiken, bevestig je dat je deze Gebruiksvoorwaarden hebt gelezen, begrepen en aanvaard.</p>
-    <p>© 2026 Tax Master / Illimani Studio. Alle rechten voorbehouden.</p>
-</div>
-
+<main>
+    <header>
+        <h1>Gebruiksvoorwaarden - Tax Master</h1>
+
+        <p class="date">
+            Laatste wijziging:
+            <time datetime="2026-11-14">14 november 2026</time><br>
+            Ingangsdatum:
+            <time datetime="2026-11-14">14 november 2026</time>
+        </p>
+
+        <p>
+            Deze gebruiksvoorwaarden regelen het gebruik
+            van de Android-app Tax Master. Ze leggen uit
+            waarvoor de app bedoeld is, wat je ervan kunt
+            verwachten en welke rechten en
+            verantwoordelijkheden gelden.
+        </p>
+
+        <div class="important-box">
+            <p>
+                Tax Master is een onafhankelijke,
+                niet-officiële app voor algemene fiscale
+                informatie en indicatieve simulaties.
+                De app dient geen belastingaangifte in
+                en vervangt geen persoonlijk professioneel
+                advies. Controleer belangrijke resultaten
+                via officiële bronnen of een bevoegde adviseur.
+            </p>
+        </div>
+
+        <p>
+            Deze voorwaarden beperken geen rechten die
+            je op grond van dwingend recht hebt.
+        </p>
+    </header>
+
+    <section aria-labelledby="aanbieder">
+        <h2 id="aanbieder">1. Wie de app aanbiedt</h2>
+
+        <p>
+            Tax Master wordt aangeboden door:
+        </p>
+
+        <div class="info-box">
+            <address>
+                Mauro Agreda De Ro<br>
+                Handelend onder de naam Illimani Studio<br>
+                Aanbieder van Tax Master<br>
+                Gent, België<br>
+                E-mail:
+                <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>
+            </address>
+        </div>
+
+        <p>
+            Met “wij”, “ons” en “onze” bedoelen wij
+            deze aanbieder. Illimani Studio is de
+            handelsnaam waaronder de app wordt
+            aangeboden, niet een afzonderlijke
+            vennootschap.
+        </p>
+    </section>
+
+    <section aria-labelledby="aanvaarding">
+        <h2 id="aanvaarding">2. Aanvaarding en doelgroep</h2>
+
+        <p>
+            Je krijgt de gelegenheid deze voorwaarden
+            te lezen voordat je ze in de app aanvaardt.
+            De app registreert lokaal de versie en
+            het tijdstip van je aanvaarding.
+        </p>
+
+        <p>
+            Als je niet akkoord gaat, aanvaard je
+            de voorwaarden niet en gebruik je de app niet.
+            Je kunt de app van je toestel verwijderen.
+        </p>
+
+        <p>
+            Tax Master is bedoeld voor gebruikers
+            vanaf 16 jaar en is niet specifiek op
+            kinderen gericht. Deze doelgroepkeuze
+            betekent niet dat iedere minderjarige
+            zelfstandig alle overeenkomsten kan sluiten.
+            Als voor jouw gebruik toestemming van een
+            ouder of wettelijke vertegenwoordiger
+            nodig is, moet je die vooraf verkrijgen.
+        </p>
+
+        <p>
+            De aanvaarding van deze voorwaarden
+            is geen toestemming voor optionele
+            gegevensverwerking. Daarover lees je
+            meer in ons privacybeleid en, waar nodig,
+            bij de betreffende functie.
+        </p>
+    </section>
+
+    <section aria-labelledby="functies">
+        <h2 id="functies">3. Wat Tax Master doet</h2>
+
+        <p>Tax Master kan helpen bij:</p>
+
+        <ul>
+            <li>
+                Het structureren van fiscale
+                informatie via vragen en stappen.
+            </li>
+            <li>
+                Het maken van indicatieve berekeningen
+                op basis van de gegevens die je invoert.
+            </li>
+            <li>
+                Het bewaren en bekijken van lokale
+                simulaties, overzichten en resultaten.
+            </li>
+            <li>
+                Het raadplegen van fiscale uitleg
+                en links naar officiële informatie.
+            </li>
+            <li>
+                Het downloaden van ondersteunde
+                fiscale datasets.
+            </li>
+            <li>
+                Het vrijwillig melden van fouten
+                of versturen van algemene feedback.
+            </li>
+        </ul>
+
+        <p>
+            De beschikbare functies, belastingjaren
+            en fiscale situaties hangen af van de
+            geïnstalleerde appversie en datasets.
+            De app ondersteunt niet noodzakelijk
+            iedere mogelijke persoonlijke of
+            fiscale situatie.
+        </p>
+
+        <p>
+            Je hebt geen Tax Master-account nodig.
+            Er is geen persoonlijke registratie
+            met een gebruikersnaam of wachtwoord.
+        </p>
+    </section>
+
+    <section aria-labelledby="overheid">
+        <h2 id="overheid">4. Geen officiële overheidsdienst</h2>
+
+        <div class="important-box">
+            <p>
+                Tax Master is niet verbonden aan,
+                goedgekeurd door, gesponsord door
+                of beheerd door de FOD Financiën,
+                MyMinfin, Tax-on-web of een andere
+                Belgische overheidsinstantie.
+            </p>
+
+            <p>
+                Tax Master dient geen officiële
+                belastingaangifte voor je in en
+                verstuurt je fiscale antwoorden
+                of simulaties niet naar de overheid.
+            </p>
+        </div>
+
+        <p>
+            Voor officiële informatie en het
+            indienen van je belastingaangifte
+            kun je onder meer terecht bij:
+        </p>
+
+        <ul>
+            <li>
+                <a href="https://financien.belgium.be"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    FOD Financiën
+                </a>
+            </li>
+            <li>
+                <a href="https://financien.belgium.be/nl/particulieren/belastingaangifte"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Mijn belastingaangifte - FOD Financiën
+                </a>
+            </li>
+            <li>
+                <a href="https://myminfin.fgov.be"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    MyMinfin
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section aria-labelledby="indicatief">
+        <h2 id="indicatief">5. Indicatieve resultaten en geen persoonlijk advies</h2>
+
+        <p>
+            De uitleg en resultaten in Tax Master
+            zijn algemene hulpmiddelen. Ze vormen
+            geen persoonlijk fiscaal, juridisch,
+            boekhoudkundig of financieel advies.
+            Door het gebruik van de app ontstaat
+            geen opdrachtrelatie met een
+            belastingadviseur of accountant.
+        </p>
+
+        <p>
+            Een resultaat is afhankelijk van je
+            invoer, het gekozen belastingjaar,
+            de gebruikte dataset en de regels
+            en aannames die de app ondersteunt.
+            Onjuiste of ontbrekende gegevens
+            kunnen tot afwijkende resultaten leiden.
+        </p>
+
+        <p>
+            Fiscale wetgeving en administratieve
+            interpretaties kunnen veranderen.
+            Bijzondere uitzonderingen, regionale
+            verschillen of specifieke persoonlijke
+            omstandigheden zijn niet noodzakelijk
+            volledig verwerkt.
+        </p>
+
+        <p>
+            Een simulatie is geen officiële
+            aanslag of bindende berekening.
+            Wij beloven geen bepaald
+            belastingvoordeel, terugbetalingsbedrag
+            of fiscale uitkomst.
+        </p>
+
+        <p>
+            Controleer belangrijke informatie
+            en gebruik de app niet als enige
+            basis voor een belastingaangifte
+            of ingrijpende financiële beslissing.
+            Raadpleeg bij twijfel, complexe
+            situaties of belangrijke bedragen
+            de FOD Financiën of een bevoegde
+            professionele adviseur.
+        </p>
+
+        <p>
+            Deze beschrijving van het indicatieve
+            karakter van de app doet geen afbreuk
+            aan onze verplichtingen of aan
+            toepasselijke wettelijke rechten.
+        </p>
+    </section>
+
+    <section aria-labelledby="verantwoordelijkheden">
+        <h2 id="verantwoordelijkheden">6. Jouw verantwoordelijkheden</h2>
+
+        <p>Wij vragen je om:</p>
+
+        <ul>
+            <li>
+                Gegevens zorgvuldig en zo juist
+                en volledig mogelijk in te voeren.
+            </li>
+            <li>
+                Te controleren of je het juiste
+                belastingjaar en een passende
+                dataset gebruikt.
+            </li>
+            <li>
+                Belangrijke resultaten te vergelijken
+                met officiële informatie.
+            </li>
+            <li>
+                Je officiële aangifte en fiscale
+                verplichtingen tijdig te regelen.
+                De app neemt die verplichtingen
+                niet van je over.
+            </li>
+            <li>
+                Originele documenten en bewijsstukken
+                veilig te bewaren. Een simulatie
+                vervangt die documenten niet.
+            </li>
+            <li>
+                Je toestel te beschermen en
+                beschikbare beveiligingsupdates
+                tijdig te installeren.
+            </li>
+            <li>
+                Bij gegevens over andere personen
+                hun rechten en de toepasselijke
+                wetgeving te respecteren.
+            </li>
+        </ul>
+
+        <p>
+            Deze verantwoordelijkheden nemen
+            onze eigen wettelijke en
+            contractuele verplichtingen niet weg.
+        </p>
+    </section>
+
+    <section aria-labelledby="privacy">
+        <h2 id="privacy">7. Lokale gegevens en privacy</h2>
+
+        <div class="privacy-box">
+            <p>
+                Je fiscale antwoorden,
+                simulatiegegevens en
+                berekeningsresultaten worden
+                lokaal in de app verwerkt
+                en opgeslagen.
+                De app voegt deze gegevens niet
+                toe aan feedbackberichten of
+                verzoeken aan de updateserver.
+            </p>
+        </div>
+
+        <p>
+            Dat geldt niet voor informatie
+            die je zelf in een feedbackbericht
+            of e-mail overneemt, of zelf
+            buiten de app opslaat of deelt.
+        </p>
+
+        <p>
+            Je kunt lokale gegevens verwijderen
+            via beschikbare verwijderfuncties,
+            door de appgegevens te wissen in
+            Android of door de app te
+            deïnstalleren.
+            Zelf opgeslagen of gedeelde
+            bestanden worden daardoor niet
+            automatisch verwijderd.
+        </p>
+
+        <p>
+            Het verwijderen van lokale
+            appgegevens verwijdert geen feedback
+            of e-mails die je eerder hebt
+            verzonden.
+        </p>
+
+        <p>
+            Ons
+            <a href="https://maurofinmaster.github.io/taxmaster/privacy.html"
+               target="_blank"
+               rel="noopener noreferrer">privacybeleid</a>
+            beschrijft welke gegevens worden
+            verwerkt, voor welke doeleinden,
+            hoe lang ze worden bewaard en
+            hoe je jouw privacyrechten
+            kunt uitoefenen.
+        </p>
+    </section>
+
+    <section aria-labelledby="feedback">
+        <h2 id="feedback">8. Vrijwillige feedback</h2>
+
+        <p>
+            Feedback geven is optioneel.
+            Je kunt de app gebruiken zonder
+            feedback te versturen.
+        </p>
+
+        <h3>Algemene feedback</h3>
+
+        <p>
+            Via het feedbackscherm kun je
+            een tekstbericht van maximaal
+            1.000 tekens indienen.
+            Je bevestigt eerst via het
+            selectievakje waarvoor je feedback
+            wordt verwerkt en dient daarna
+            het bericht in.
+        </p>
+
+        <h3>Feedback over een vraag</h3>
+
+        <p>
+            Bij een vraag kun je een
+            feedbackcategorie kiezen.
+            Door een categorie te kiezen,
+            dien je de vraagmelding in.
+            Je fiscale antwoord en
+            berekeningsresultaten worden
+            niet aan die melding toegevoegd.
+        </p>
+
+        <h3>Verzending en gebruik</h3>
+
+        <p>
+            Feedback wordt eerst lokaal
+            opgeslagen en vervolgens op de
+            achtergrond naar Firebase
+            Firestore verzonden wanneer een
+            geschikte internetverbinding
+            beschikbaar is.
+            Daarbij worden beperkte gegevens
+            meegestuurd, zoals het
+            aanmaaktijdstip, de appversie
+            en de taalinstelling.
+            Een vraagmelding bevat ook de
+            vraagidentificatie, vraagversie
+            en gekozen categorie.
+        </p>
+
+        <div class="important-box">
+            <p>
+                Stuur geen rijksregisternummer,
+                bankrekeningnummer, wachtwoord,
+                volledige belastingaangifte,
+                fiscale fiche, identiteitsdocument
+                of andere gevoelige gegevens
+                over jezelf of anderen.
+                Feedback is geen kanaal voor
+                persoonlijke fiscale dossiers.
+            </p>
+        </div>
+
+        <p>
+            Wij kunnen feedback beoordelen
+            en gebruiken om fouten te
+            onderzoeken en de app te
+            verbeteren, volgens de doeleinden
+            en rechtsgronden in ons
+            privacybeleid.
+            Feedback wordt niet openbaar
+            gepubliceerd.
+        </p>
+
+        <p>
+            Wij beloven niet dat iedere
+            suggestie wordt uitgevoerd of
+            dat je op iedere melding een
+            persoonlijk antwoord ontvangt.
+            Voor een supportvraag of
+            privacyverzoek kun je ons e-mailen.
+        </p>
+    </section>
+
+    <section aria-labelledby="licentie">
+        <h2 id="licentie">9. Gebruiksrecht en intellectuele eigendom</h2>
+
+        <p>
+            Je krijgt een niet-exclusief
+            gebruiksrecht om Tax Master op
+            je eigen Android-toestel te
+            installeren en voor persoonlijke,
+            niet-commerciële doeleinden
+            te gebruiken volgens deze
+            voorwaarden.
+        </p>
+
+        <p>
+            De intellectuele-eigendomsrechten
+            op de app en de door ons gemaakte
+            software, vormgeving, teksten
+            en andere beschermde onderdelen
+            berusten bij Mauro Agreda De Ro
+            of de betreffende rechthebbenden.
+            Je krijgt geen eigendom van
+            die onderdelen.
+        </p>
+
+        <p>
+            Dit doet geen afbreuk aan jouw
+            rechten op je eigen gegevens
+            en feedback, aan rechten van
+            derden, of aan het gebruik van
+            informatie die niet door
+            intellectuele-eigendomsrechten
+            wordt beschermd.
+        </p>
+
+        <p>
+            Voor open-sourceonderdelen
+            en andere materialen van derden
+            blijven hun eigen toepasselijke
+            licentievoorwaarden gelden.
+            Deze voorwaarden beperken geen
+            rechten die zulke licenties
+            of de wet je geven.
+        </p>
+
+        <p>
+            Buiten wat de wet of een
+            toepasselijke licentie toestaat,
+            mag je beschermde onderdelen
+            niet zonder toestemming kopiëren,
+            aanpassen, verspreiden, verkopen
+            of als eigen product aanbieden.
+        </p>
+    </section>
+
+    <section aria-labelledby="gebruik">
+        <h2 id="gebruik">10. Aanvaardbaar gebruik</h2>
+
+        <p>
+            Gebruik de app en bijbehorende
+            diensten rechtmatig.
+            Het is niet toegestaan om:
+        </p>
+
+        <ul>
+            <li>
+                Fraude, identiteitsmisbruik
+                of andere onrechtmatige
+                activiteiten te faciliteren.
+            </li>
+            <li>
+                Malware, spam of opzettelijk
+                schadelijke inhoud te versturen.
+            </li>
+            <li>
+                Zonder toestemming toegang
+                te proberen te krijgen tot
+                systemen of gegevens die
+                niet voor jou bestemd zijn.
+            </li>
+            <li>
+                De feedback- of updateservice
+                opzettelijk te overbelasten
+                of de beschikbaarheid ervan
+                te verstoren.
+            </li>
+            <li>
+                Beveiligingsmaatregelen
+                onrechtmatig te omzeilen
+                of rechten van anderen
+                te schenden.
+            </li>
+            <li>
+                De app onrechtmatig te
+                decompileren of te
+                reverse-engineeren.
+                Handelingen die de wet
+                uitdrukkelijk toestaat,
+                blijven toegestaan.
+            </li>
+        </ul>
+
+        <p>
+            Denk je een beveiligingsprobleem
+            te hebben gevonden, meld dit
+            dan via ons contactadres.
+            Probeer het probleem niet verder
+            te onderzoeken door gegevens
+            van anderen te benaderen,
+            te wijzigen of te kopiëren.
+        </p>
+    </section>
+
+    <section aria-labelledby="updates">
+        <h2 id="updates">11. Updates, datasets en beschikbaarheid</h2>
+
+        <p>
+            Wij streven naar een bruikbare,
+            veilige en zorgvuldig onderhouden
+            app. Tijdelijke storingen,
+            onderhoud of onderbrekingen
+            kunnen voorkomen.
+        </p>
+
+        <p>
+            Voor datasetdownloads,
+            feedbackverzending en externe
+            websites is een geschikte
+            internetverbinding nodig.
+            Eventuele kosten van je
+            internet- of mobiele provider
+            zijn voor jouw rekening.
+        </p>
+
+        <p>
+            Appupdates en datasetupdates
+            zijn niet hetzelfde.
+            Een nieuwe appversie betekent
+            niet automatisch dat ieder
+            belastingjaar of iedere
+            fiscale wijziging wordt ondersteund.
+            Controleer de beschikbare
+            versie- en jaarinformatie
+            in de app.
+        </p>
+
+        <p>
+            Installeer updates die nodig
+            zijn voor beveiliging en een
+            goede werking binnen een
+            redelijke termijn.
+            Automatische installatie
+            van appupdates hangt mede
+            af van je toestel- en
+            winkelinstellingen.
+        </p>
+
+        <p>
+            De technische vereisten en
+            ondersteunde Android-versies
+            worden bij de betreffende
+            appversie vermeld.
+            Wij beloven geen ondersteuning
+            voor ieder toestel of voor
+            toekomstige belastingjaren
+            die nog niet zijn aangekondigd.
+        </p>
+
+        <h3>Wijziging of stopzetting van functies</h3>
+
+        <p>
+            Wij kunnen functies of
+            ondersteunde versies wijzigen
+            wanneer daarvoor een geldige
+            reden bestaat, zoals gewijzigde
+            wetgeving, beveiligingsrisico’s,
+            technische incompatibiliteit
+            of het wegvallen van een
+            noodzakelijke externe dienst.
+        </p>
+
+        <p>
+            Wij houden daarbij rekening
+            met de gevolgen voor gebruikers.
+            Bij een belangrijke beperking
+            of geplande stopzetting
+            informeren wij je waar
+            redelijkerwijs mogelijk vooraf,
+            met de reden en ingangsdatum.
+            Bij een dringend beveiligings-
+            of juridisch probleem kan
+            onmiddellijk handelen nodig zijn.
+        </p>
+
+        <p>
+            Als een wijziging je gebruik
+            wezenlijk benadeelt, blijven
+            de eventuele wettelijke
+            informatie-, beëindigings-
+            en andere consumentenrechten
+            onverminderd gelden.
+            Deze bepaling geeft ons geen
+            onbeperkt recht om toegezegde
+            prestaties te laten vervallen.
+        </p>
+    </section>
+
+    <section aria-labelledby="derden">
+        <h2 id="derden">12. Externe diensten en websites</h2>
+
+        <p>
+            Voor bepaalde onderdelen
+            gebruiken wij externe diensten:
+        </p>
+
+        <ul>
+            <li>
+                Google Firebase / Firestore
+                voor feedbackopslag.
+            </li>
+            <li>
+                Cloudflare voor
+                datasetlevering en
+                infrastructuurbeveiliging.
+            </li>
+            <li>
+                GitHub Pages voor
+                online documentpagina’s.
+            </li>
+            <li>
+                Gmail voor contact
+                via ons e-mailadres.
+            </li>
+        </ul>
+
+        <p>
+            Firebase Analytics is in
+            deze appversie gedeactiveerd.
+            Deze versie bevat geen door
+            Tax Master geïntegreerde
+            Firebase Crashlytics-crashrapportage.
+            Wij gebruiken geen
+            advertentienetwerken.
+        </p>
+
+        <p>
+            Wanneer je een externe
+            website opent, gelden voor
+            het gebruik van die website
+            de voorwaarden en
+            privacyinformatie van
+            de betreffende aanbieder.
+            Wij beheren die websites
+            niet en kunnen hun inhoud
+            of beschikbaarheid niet bepalen.
+        </p>
+
+        <p>
+            Het gebruik van externe
+            dienstverleners neemt onze
+            eigen wettelijke
+            verantwoordelijkheid voor
+            de door ons aangeboden
+            app en gegevensverwerking
+            niet weg.
+        </p>
+    </section>
+
+    <section aria-labelledby="kosten">
+        <h2 id="kosten">13. Kosten en eventuele toekomstige betalingen</h2>
+
+        <p>
+            Tax Master wordt in deze
+            versie gratis aangeboden.
+            Deze voorwaarden geven ons
+            geen toestemming om je
+            automatisch kosten aan
+            te rekenen.
+        </p>
+
+        <p>
+            Als wij later betaalde
+            functies of abonnementen
+            aanbieden, ontvang je
+            vooraf informatie over
+            de prijs, inhoud, duur
+            en toepasselijke voorwaarden.
+            Een betalingsverplichting
+            ontstaat alleen nadat je
+            de betreffende aankoop
+            uitdrukkelijk hebt aanvaard.
+        </p>
+
+        <p>
+            Eventuele toepasselijke
+            wettelijke rechten rond
+            aankopen, herroeping en
+            terugbetaling worden
+            daardoor niet beperkt.
+        </p>
+    </section>
+
+    <section aria-labelledby="kwaliteit">
+        <h2 id="kwaliteit">14. Kwaliteit en wettelijke rechten</h2>
+
+        <p>
+            Wij streven naar een
+            zorgvuldige werking en
+            beschrijving van de app.
+            De app blijft een
+            indicatief hulpmiddel
+            met de in deze voorwaarden
+            beschreven mogelijkheden
+            en beperkingen.
+        </p>
+
+        <p>
+            Wij geven geen aanvullende
+            commerciële garantie op
+            een bepaalde fiscale
+            uitkomst, ononderbroken
+            beschikbaarheid of
+            geschiktheid voor een
+            niet-ondersteunde situatie.
+        </p>
+
+        <p>
+            Dit is geen uitsluiting
+            van toepasselijke wettelijke
+            garanties of rechten bij
+            gebrekkige digitale inhoud
+            of dienstverlening.
+            Waar zulke rechten gelden,
+            blijven zij volledig behouden.
+        </p>
+
+        <p>
+            Bewaar originele fiscale
+            documenten buiten de app.
+            Lokale appgegevens kunnen
+            verloren gaan bij onder
+            meer toestelverlies,
+            beschadiging of verwijdering
+            van appgegevens.
+            De app is geen vervanging
+            voor een zelfstandig
+            documentenarchief.
+        </p>
+    </section>
+
+    <section aria-labelledby="aansprakelijkheid">
+        <h2 id="aansprakelijkheid">15. Aansprakelijkheid</h2>
+
+        <p>
+            Onze aansprakelijkheid wordt
+            bepaald door de toepasselijke
+            wetgeving. De indicatieve
+            aard van de app betekent
+            niet dat wij voor iedere
+            fout of tekortkoming van
+            verantwoordelijkheid zijn
+            vrijgesteld.
+        </p>
+
+        <p>
+            Bij een schadevraag moet
+            worden beoordeeld of er
+            een tekortkoming is waarvoor
+            wij juridisch verantwoordelijk
+            zijn, welke schade daardoor
+            is veroorzaakt en welke
+            overige wettelijke
+            voorwaarden gelden.
+        </p>
+
+        <p>
+            Onjuiste invoer, een verkeerd
+            gekozen belastingjaar,
+            het negeren van duidelijke
+            waarschuwingen of problemen
+            met je toestel kunnen,
+            afhankelijk van de
+            omstandigheden, van invloed
+            zijn op die beoordeling.
+            Zij sluiten onze eigen
+            verantwoordelijkheid niet
+            automatisch uit.
+        </p>
+
+        <p>
+            Deze voorwaarden sluiten
+            geen aansprakelijkheid uit
+            voor opzet, zware fout,
+            aantasting van het leven
+            of de lichamelijke
+            integriteit, of andere
+            aansprakelijkheid die
+            wettelijk niet mag worden
+            uitgesloten of beperkt.
+        </p>
+
+        <p>
+            Er geldt geen algemene
+            aansprakelijkheidslimiet
+            van nul euro omdat de
+            app gratis is.
+        </p>
+    </section>
+
+    <section aria-labelledby="stoppen">
+        <h2 id="stoppen">16. Stoppen, beperking en beëindiging</h2>
+
+        <p>
+            Je kunt op elk moment
+            stoppen met het gebruik
+            van Tax Master en de
+            app verwijderen.
+            Voor het verwijderen van
+            eerder verzonden gegevens
+            gelden de mogelijkheden
+            uit het privacybeleid.
+        </p>
+
+        <p>
+            Bij een concrete ernstige
+            schending van deze
+            voorwaarden, misbruik of
+            een veiligheidsrisico
+            kunnen wij betrokken
+            online functies beperken
+            of opschorten, voor zover
+            dat technisch mogelijk
+            en redelijkerwijs nodig is.
+        </p>
+
+        <p>
+            Wij beperken de maatregel
+            tot wat passend is.
+            Waar mogelijk geven wij
+            vooraf een waarschuwing
+            en gelegenheid om het
+            probleem te verhelpen.
+            Bij een dringende dreiging
+            of wettelijke verplichting
+            kunnen wij direct handelen.
+        </p>
+
+        <p>
+            Voor zover mogelijk en
+            rechtmatig informeren wij
+            je over de reden en hoe
+            je de maatregel kunt
+            laten herbekijken.
+            Omdat de app geen account
+            gebruikt, kunnen wij een
+            gebruiker niet altijd
+            persoonlijk bereiken.
+        </p>
+
+        <p>
+            Beëindiging tast geen
+            reeds ontstane wettelijke
+            rechten of verplichtingen
+            aan. Bepalingen die naar
+            hun aard na beëindiging
+            relevant blijven, zoals
+            intellectuele eigendom
+            en geschillenbeslechting,
+            blijven in die mate gelden.
+        </p>
+    </section>
+
+    <section aria-labelledby="wijzigingen">
+        <h2 id="wijzigingen">17. Wijzigingen van deze voorwaarden</h2>
+
+        <p>
+            Wij kunnen deze voorwaarden
+            aanpassen wegens wijzigingen
+            in wetgeving, functies,
+            beveiliging of de manier
+            waarop wij de app aanbieden.
+        </p>
+
+        <p>
+            De bijgewerkte tekst vermeldt
+            de wijzigingsdatum en
+            ingangsdatum.
+            Bij belangrijke wijzigingen
+            informeren wij je vooraf
+            op een passende manier,
+            bijvoorbeeld in de app.
+        </p>
+
+        <p>
+            Als een wijziging nieuwe
+            verplichtingen voor je
+            meebrengt of je rechten
+            wezenlijk beïnvloedt,
+            vragen wij waar nodig
+            opnieuw om je aanvaarding.
+            Alleen verder gebruik geldt
+            niet automatisch als
+            instemming met iedere
+            mogelijke wijziging.
+        </p>
+
+        <p>
+            Wijzigingen nemen geen
+            reeds ontstane rechten
+            met terugwerkende kracht
+            weg en beperken geen
+            dwingende wettelijke rechten.
+        </p>
+    </section>
+
+    <section aria-labelledby="recht">
+        <h2 id="recht">18. Toepasselijk recht en geschillen</h2>
+
+        <p>
+            Op deze voorwaarden is
+            Belgisch recht van toepassing.
+            Als je consument bent en
+            dwingende bepalingen van
+            het recht van je gewone
+            verblijfplaats je bescherming
+            bieden die niet mag worden
+            uitgesloten, behoud je
+            die bescherming.
+        </p>
+
+        <p>
+            Welke rechter bevoegd is,
+            wordt bepaald door de
+            toepasselijke wettelijke
+            regels. Deze voorwaarden
+            verplichten je niet om
+            uitsluitend bij een
+            rechtbank in Gent of
+            België te procederen
+            wanneer de wet je een
+            andere mogelijkheid geeft.
+        </p>
+
+        <p>
+            Je kunt een probleem eerst
+            bij ons melden om een
+            oplossing te zoeken.
+            Dat is geen verplichte
+            voorwaarde om je wettelijke
+            rechten uit te oefenen.
+        </p>
+    </section>
+
+    <section aria-labelledby="geldigheid">
+        <h2 id="geldigheid">19. Geldigheid van bepalingen</h2>
+
+        <p>
+            Als een bepaling ongeldig,
+            onrechtmatig of niet
+            afdwingbaar blijkt, wordt
+            zij niet toegepast.
+            De overige voorwaarden
+            blijven gelden voor zover
+            de overeenkomst zonder
+            die bepaling kan voortbestaan.
+        </p>
+
+        <p>
+            Een ongeldige bepaling
+            wordt niet automatisch
+            vervangen door de voor
+            ons gunstigste toegestane
+            bepaling.
+            Je wettelijke bescherming
+            blijft behouden.
+        </p>
+    </section>
+
+    <section aria-labelledby="contact">
+        <h2 id="contact">20. Contact en klachten</h2>
+
+        <p>
+            Voor vragen over de app,
+            deze voorwaarden of een
+            klacht kun je ons bereiken
+            via:
+        </p>
+
+        <div class="info-box">
+            <address>
+                Mauro Agreda De Ro<br>
+                Illimani Studio / Tax Master<br>
+                Gent, België<br>
+                <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>
+            </address>
+        </div>
+
+        <p>
+            Beschrijf het probleem zo
+            concreet mogelijk en vermeld
+            waar relevant je appversie,
+            Android-versie en het
+            betrokken belastingjaar.
+            Stuur geen volledige
+            belastingaangifte,
+            identiteitsdocumenten,
+            wachtwoorden of andere
+            onnodige gevoelige gegevens mee.
+        </p>
+    </section>
+
+    <footer>
+        <p>
+            Tax Master is een hulpmiddel
+            voor fiscale informatie en
+            indicatieve simulaties,
+            geen officiële aangiftedienst.
+        </p>
+
+        <p>
+            © 2026 Mauro Agreda De Ro —
+            Illimani Studio / Tax Master.
+            Rechten van derden blijven
+            voorbehouden.
+        </p>
+    </footer>
+</main>
 </body>
 </html>
