@@ -3,425 +3,1245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description"
+          content="Lees hoe Tax Master omgaat met lokale fiscale gegevens, optionele feedback, datasetdownloads en privacyrechten.">
     <title>Privacybeleid - Tax Master</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            padding: 20px;
-            line-height: 1.7;
-            color: #1E293B;
-            background-color: #FFFFFF;
-            font-size: 15px;
+    <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --text: #1E293B;
+            --muted: #475569;
+            --heading: #0F172A;
+            --border: #E2E8F0;
+            --link: #1D4ED8;
+            --info-background: #F1F5F9;
+            --info-border: #64748B;
+            --privacy-background: #EFF6FF;
+            --privacy-border: #2563EB;
+            --important-background: #FFFBEB;
+            --important-border: #D97706;
         }
 
-        h1 { font-size: 28px; font-weight: 700; color: #0F172A; margin-bottom: 12px; line-height: 1.3; }
-        h2 { font-size: 22px; font-weight: 700; color: #0F172A; margin-top: 36px; margin-bottom: 14px; border-bottom: 2px solid #E2E8F0; padding-bottom: 8px; }
-        h3 { font-size: 18px; font-weight: 600; color: #334155; margin-top: 28px; margin-bottom: 10px; }
-        p { margin-bottom: 14px; color: #475569; }
-        ul, ol { margin-left: 24px; margin-bottom: 16px; }
-        li { margin-bottom: 8px; color: #475569; padding-left: 4px; }
-        strong, b { font-weight: 600; color: #0F172A; }
-        .date { font-size: 13px; color: #64748B; margin-bottom: 24px; font-style: italic; }
-        .important-box { background-color: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 20px 0; border-radius: 4px; }
-        .privacy-box { background-color: #DBEAFE; border-left: 4px solid #2563EB; padding: 16px; margin: 20px 0; border-radius: 4px; }
-        .info-box { background-color: #F1F5F9; border-left: 4px solid #64748B; padding: 16px; margin: 20px 0; border-radius: 4px; }
-        .checkmark { color: #10B981; font-weight: bold; }
-        .cross { color: #EF4444; font-weight: bold; }
-        a { color: #2563EB; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        hr { border: none; border-top: 1px solid #E2E8F0; margin: 32px 0; }
-        .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #E2E8F0; text-align: center; color: #64748B; font-size: 13px; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--background);
+            overflow-wrap: anywhere;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--heading);
+            line-height: 1.35;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+
+        h2 {
+            margin: 36px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            font-size: 22px;
+        }
+
+        h3 {
+            margin: 24px 0 10px;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        ul,
+        ol {
+            margin: 0 0 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--link);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .date {
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .info-box,
+        .privacy-box,
+        .important-box {
+            margin: 20px 0;
+            padding: 16px;
+            border-left: 4px solid;
+            border-radius: 6px;
+        }
+
+        .info-box {
+            background: var(--info-background);
+            border-color: var(--info-border);
+        }
+
+        .privacy-box {
+            background: var(--privacy-background);
+            border-color: var(--privacy-border);
+        }
+
+        .important-box {
+            background: var(--important-background);
+            border-color: var(--important-border);
+        }
+
+        .info-box > :last-child,
+        .privacy-box > :last-child,
+        .important-box > :last-child {
+            margin-bottom: 0;
+        }
+
+        address {
+            color: var(--muted);
+            font-style: normal;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0F172A;
+                --text: #E2E8F0;
+                --muted: #CBD5E1;
+                --heading: #F8FAFC;
+                --border: #334155;
+                --link: #93C5FD;
+                --info-background: #1E293B;
+                --info-border: #94A3B8;
+                --privacy-background: #172554;
+                --privacy-border: #60A5FA;
+                --important-background: #30230F;
+                --important-border: #FBBF24;
+            }
+        }
+
+        @media print {
+            body {
+                color: #000000;
+                background: #FFFFFF;
+                padding: 0;
+            }
+
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            address,
+            a {
+                color: #000000;
+            }
+
+            .info-box,
+            .privacy-box,
+            .important-box {
+                background: #FFFFFF;
+                break-inside: avoid;
+            }
+        }
     </style>
 </head>
+
 <body>
-
-<h1>Privacybeleid - Tax Master</h1>
-
-<p class="date">
-    Laatste wijziging: 13 november 2026<br>
-    Ingangsdatum: 13 november 2026
-</p>
-
-<h2>1. Wie wij zijn</h2>
-
-<p>Tax Master (“Tax Master”, “de app”, “wij”, “ons”, “onze”) is een mobiele applicatie die gebruikers helpt Belgische fiscale informatie te organiseren, berekeningen te maken en officiële Belgische overheidsinformatie te raadplegen.</p>
-
-<p>De verwerkingsverantwoordelijke voor de in deze privacyverklaring beschreven verwerking is:</p>
-
-<div class="info-box">
-    <p>
-        <strong>Tax Master / Illimani Studio</strong><br>
-        Gent, België<br>
-        E-mail: <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>
-    </p>
-</div>
-
-<div class="important-box">
-    <p><strong>Belangrijk:</strong> Tax Master is een onafhankelijke, niet-officiële applicatie. Tax Master is niet gelieerd aan, goedgekeurd door, gesponsord door of beheerd door de Federale Overheidsdienst Financiën (FOD Financiën), MyMinfin, Tax-on-web of enige andere Belgische overheidsinstantie.</p>
-
-    <p>Tax Master biedt uitsluitend algemene, informatieve ondersteuning en geen persoonlijk fiscaal, juridisch of boekhoudkundig advies. Jij blijft zelf verantwoordelijk voor de juistheid en volledigheid van je gegevens en voor het correct en tijdig indienen van je belastingaangifte bij de FOD Financiën.</p>
-
-    <p>Officiële informatie en officiële diensten vind je via <a href="https://financien.belgium.be" target="_blank" rel="noopener">financien.belgium.be</a> en <a href="https://myminfin.fgov.be" target="_blank" rel="noopener">myminfin.fgov.be</a>.</p>
-</div>
-
-<h2>2. Wanneer deze privacyverklaring geldt</h2>
-
-<p>Deze privacyverklaring geldt wanneer je de Tax Master-app gebruikt op Android, inclusief wanneer je feedback verstuurt, de app opent, fiscale informatie invoert, berekeningen uitvoert of officiële Belgische websites opent vanuit de app.</p>
-
-<p>Deze privacyverklaring geldt niet voor de eigen privacypraktijken van Google, de FOD Financiën, MyMinfin of andere websites die vanuit Tax Master worden geopend. Voor die diensten gelden de privacyverklaringen van de betreffende aanbieders.</p>
-
-<h2>3. Samenvatting van onze dataverwerking</h2>
-
-<div class="privacy-box">
-    <ul>
-        <li><span class="checkmark">✅</span> <strong>Geen account vereist:</strong> je kunt Tax Master gebruiken zonder account, naam, e-mailadres of wachtwoord.</li>
-        <li><span class="checkmark">✅</span> <strong>Fiscale antwoorden en resultaten blijven lokaal:</strong> je fiscale antwoorden, berekeningsresultaten en simulatiegegevens worden uitsluitend lokaal op je Android-toestel opgeslagen.</li>
-        <li><span class="checkmark">✅</span> <strong>Geen verkoop van gegevens:</strong> wij verkopen jouw gegevens niet.</li>
-        <li><span class="checkmark">✅</span> <strong>Geen advertenties:</strong> Tax Master toont geen advertenties en gebruikt geen advertentienetwerken.</li>
-        <li><span class="checkmark">✅</span> <strong>Beperkte technische gegevens:</strong> Firebase Analytics verzamelt beperkte technische en gebruiksgegevens om de app te verbeteren.</li>
-        <li><span class="checkmark">✅</span> <strong>Optionele feedback:</strong> feedback wordt alleen verzonden nadat jij dit expliciet bevestigt.</li>
-    </ul>
-</div>
-
-<p>Tax Master verzamelt of verwerkt geen rijksregisternummer, bankrekeningnummer, creditcardgegevens, wachtwoorden, contacten, locatiegegevens, camera- of microfoonbeelden, foto’s of biometrische gegevens.</p>
-
-<h2>4. Welke gegevens wij verwerken</h2>
-
-<h3>4.1 Fiscale antwoorden en berekeningsresultaten</h3>
-
-<p>Wanneer je Tax Master gebruikt, kun je fiscale informatie invoeren, zoals inkomsten, beroepskosten, aftrekposten, gezinssamenstelling, personen ten laste, vastgoedgegevens, investeringen, pensioenen of andere fiscale gegevens.</p>
-
-<p>Deze gegevens worden gebruikt om vragen te tonen, berekeningen uit te voeren en resultaten of overzichten binnen de app weer te geven.</p>
-
-<div class="privacy-box">
-    <p><strong>Lokale opslag:</strong></p>
-    <ul>
-        <li>Jouw fiscale antwoorden, berekeningsresultaten, simulatiegegevens en conceptgegevens worden uitsluitend lokaal op je toestel opgeslagen.</li>
-        <li>Deze gegevens worden niet naar Firebase, Firestore of een andere server van Tax Master verzonden.</li>
-        <li>Wij verkopen, delen of gebruiken deze gegevens niet voor reclame, profiling of marketing.</li>
-    </ul>
-</div>
-
-<p>De lokale opslag wordt beschermd met versleuteling via SQLCipher en Android Keystore. De effectieve bescherming hangt ook af van de beveiliging van jouw toestel, zoals een schermvergrendeling, pincode, vingerafdruk of gezichtsherkenning.</p>
-
-<h3>4.2 Technische en gebruiksgegevens via Firebase Analytics</h3>
-
-<p>Tax Master gebruikt Firebase Analytics, een dienst van Google, om de stabiliteit, prestaties en bruikbaarheid van de app te verbeteren.</p>
-
-<p>Firebase Analytics kan onder meer technische en gebruiksgegevens verwerken, zoals:</p>
-
-<ul>
-    <li>Anonieme apparaat- en app-identificatoren, waaronder een Firebase-app-instance-ID;</li>
-    <li>Toestel- en besturingssysteemgegevens;</li>
-    <li>App-versie;</li>
-    <li>Gebeurtenissen over het gebruik van bepaalde functies, zoals het controleren op updates of het downloaden van een fiscale dataset;</li>
-    <li>Technische gebeurtenissen over geslaagde of mislukte updatecontroles en datasetdownloads;</li>
-    <li>Netwerk- en interactiegegevens die Google in het kader van Firebase verwerkt, waaronder mogelijk IP-adres, apparaatgegevens, app-versie en crash- of systeemactiviteit.</li>
-</ul>
-
-<p>Tax Master verzendt via Firebase Analytics uitsluitend vooraf vastgelegde technische gebeurtenissen. Wij voegen geen fiscale antwoorden, berekeningsresultaten, persoonsgegevens, wachtwoorden, rijksregisternummers, bankgegevens of andere gevoelige gegevens toe aan Analytics-gebeurtenissen.</p>
-
-<p>De gebruikte technische gebeurtenissen zijn bijvoorbeeld:</p>
-
-<ul>
-    <li><strong>tm_update_check_ok:</strong> een updatecontrole is geslaagd.</li>
-    <li><strong>tm_update_check_failed:</strong> een updatecontrole is mislukt.</li>
-    <li><strong>tm_dataset_download_started:</strong> het downloaden van een fiscale dataset is gestart.</li>
-    <li><strong>tm_dataset_download_succeeded:</strong> het downloaden van een fiscale dataset is geslaagd.</li>
-    <li><strong>tm_dataset_download_failed:</strong> het downloaden van een fiscale dataset is mislukt.</li>
-</ul>
-
-<p>Deze gebeurtenissen bevatten geen fiscale antwoorden, berekeningsresultaten of persoonlijke gegevens.</p>
-
-<div class="info-box">
-    <p><strong>Belangrijk:</strong> Firebase Analytics is niet volledig anoniem in de technische zin. Google kan apparaat- en sessiegerelateerde identificatoren verwerken om Firebase-diensten te leveren, misbruik te voorkomen en de dienst te verbeteren. Daarom beschrijven wij deze gegevens als technische en gebruiksgegevens, niet als strikt anonieme gegevens.</p>
-</div>
-
-<h3>4.3 Optionele feedback via Firebase Firestore</h3>
-
-<p>Je kunt optioneel feedback geven over een specifieke vraag of algemene feedback versturen via het feedbackscherm in de app.</p>
-
-<p>Feedback wordt alleen verzonden nadat jij:</p>
-
-<ul>
-    <li>feedback hebt ingevoerd;</li>
-    <li>expliciet hebt bevestigd dat je begrijpt dat feedback en beperkte technische gegevens worden bewaard om Tax Master te verbeteren;</li>
-    <li>op “Feedback versturen” hebt gedrukt.</li>
-</ul>
-
-<p>Voor feedback over een specifieke vraag worden uitsluitend de volgende gegevens naar Firebase Firestore verzonden:</p>
-
-<ul>
-    <li>De identificatie van de vraag;</li>
-    <li>De versie van de vraag;</li>
-    <li>Het type feedback, namelijk “wrong”, “unclear” of “irrelevant”;</li>
-    <li>Het tijdstip waarop jij de feedback hebt aangemaakt;</li>
-    <li>De appversie;</li>
-    <li>De taalinstelling van je toestel.</li>
-</ul>
-
-<p>Voor algemene feedback worden uitsluitend de volgende gegevens naar Firebase Firestore verzonden:</p>
-
-<ul>
-    <li>De feedbacktekst die jij zelf invoert;</li>
-    <li>Het tijdstip waarop jij de feedback hebt aangemaakt;</li>
-    <li>De appversie;</li>
-    <li>De taalinstelling van je toestel.</li>
-</ul>
-
-<p>Tax Master voegt automatisch geen fiscale antwoorden, berekeningsresultaten, naam, e-mailadres, rijksregisternummer, bankgegevens of andere accountgegevens toe aan feedback.</p>
-
-<div class="important-box">
-    <p><strong>Let op:</strong> feedback is vrije tekst. Als jij zelf persoonsgegevens, fiscale fiches, rijksregisternummers, bankgegevens, wachtwoorden, screenshots of andere gevoelige informatie in je feedback plakt, kunnen die gegevens in je feedback worden verzonden en bewaard. Deel daarom nooit gevoelige persoonlijke of fiscale gegevens in feedback.</p>
-</div>
-
-<p>Feedback wordt eerst lokaal op je toestel bewaard. Zodra je toestel een internetverbinding heeft, wordt de feedback naar Firebase Firestore verzonden. Na een geslaagde verzending wordt de lokale kopie uit de wachtrij verwijderd.</p>
-
-<h3>4.4 Gegevens voor app-updates en fiscale datasets</h3>
-
-<p>Tax Master kan verbinding maken met een beveiligde updateserver om te controleren of er een nieuwe versie van de fiscale dataset beschikbaar is en om die dataset te downloaden.</p>
-
-<p>Voor deze functie kunnen technische verbindingsgegevens worden verwerkt, waaronder:</p>
-
-<ul>
-    <li>IP-adres;</li>
-    <li>Tijdstip van het verzoek;</li>
-    <li>App-versie;</li>
-    <li>Identificatie van de opgevraagde fiscale dataset;</li>
-    <li>Standaard netwerk- en beveiligingsgegevens die nodig zijn om de verbinding te leveren en misbruik te voorkomen.</li>
-</ul>
-
-<p>Tax Master verzendt geen fiscale antwoorden, berekeningsresultaten of andere inhoud van jouw simulatie naar deze updateserver.</p>
-
-<h3>4.5 Gegevens die wij niet verzamelen</h3>
-
-<ul>
-    <li><span class="cross">❌</span> Geen naam, e-mailadres, telefoonnummer of postadres.</li>
-    <li><span class="cross">❌</span> Geen accountgegevens of wachtwoorden.</li>
-    <li><span class="cross">❌</span> Geen rijksregisternummer, nationaal nummer of bankrekeningnummer.</li>
-    <li><span class="cross">❌</span> Geen locatiegegevens of GPS-gegevens.</li>
-    <li><span class="cross">❌</span> Geen contacten, foto’s, video’s, microfoonopnames of camerabeelden.</li>
-    <li><span class="cross">❌</span> Geen advertentie-ID’s voor advertentietargeting.</li>
-    <li><span class="cross">❌</span> Geen fiscale antwoorden, berekeningsresultaten of simulatiegegevens naar Firebase, Firestore of een Tax Master-server.</li>
-</ul>
-
-<h2>5. Waarom wij gegevens verwerken</h2>
-
-<table>
-    <tr>
-        <th><strong>Gegevens</strong></th>
-        <th><strong>Doel</strong></th>
-        <th><strong>Rechtsgrond</strong></th>
-    </tr>
-    <tr>
-        <td>Fiscale antwoorden en resultaten</td>
-        <td>Het lokaal bewaren en tonen van jouw simulatie, berekeningen en resultaten.</td>
-        <td>Uitvoering van de dienst die jij opvraagt; geen verzending naar Tax Master.</td>
-    </tr>
-    <tr>
-        <td>Technische en gebruiksgegevens via Firebase Analytics</td>
-        <td>Het verbeteren van stabiliteit, prestaties, veiligheid en bruikbaarheid van de app.</td>
-        <td>Wettig belang van Tax Master om de app te verbeteren en technische problemen op te sporen.</td>
-    </tr>
-    <tr>
-        <td>Optionele feedback</td>
-        <td>Het verbeteren van vragen, uitleg, inhoud en gebruiksvriendelijkheid van de app.</td>
-        <td>Toestemming, gegeven via de expliciete bevestiging in het feedbackscherm.</td>
-    </tr>
-    <tr>
-        <td>Update- en datasetgegevens</td>
-        <td>Het controleren op en veilig aanbieden van fiscale datasetupdates.</td>
-        <td>Uitvoering van de dienst; wettig belang voor beveiliging en misbruikpreventie.</td>
-    </tr>
-</table>
-
-<h2>6. Wat wij niet doen</h2>
-
-<ul>
-    <li><span class="cross">❌</span> Wij verkopen jouw gegevens niet.</li>
-    <li><span class="cross">❌</span> Wij gebruiken jouw gegevens niet voor advertenties of advertentietargeting.</li>
-    <li><span class="cross">❌</span> Wij delen jouw fiscale antwoorden of berekeningsresultaten niet met derden.</li>
-    <li><span class="cross">❌</span> Wij maken geen gebruikersaccounts aan.</li>
-    <li><span class="cross">❌</span> Wij bouwen geen gedetailleerde persoonlijke profielen op.</li>
-    <li><span class="cross">❌</span> Wij gebruiken jouw fiscale gegevens niet voor marketing, kredietbeoordeling, verzekeringen, arbeidsbemiddeling of profilering.</li>
-    <li><span class="cross">❌</span> Wij vragen geen toegang tot camera, microfoon, locatie of contacten.</li>
-</ul>
-
-<h2>7. Bewaartermijnen</h2>
-
-<h3>7.1 Fiscale antwoorden en resultaten</h3>
-
-<p>Jouw fiscale antwoorden, berekeningsresultaten en simulatiegegevens worden lokaal op je toestel bewaard totdat jij ze verwijdert of de app van je toestel verwijdert. Tax Master bewaart deze gegevens niet op eigen servers.</p>
-
-<h3>7.2 Firebase Analytics</h3>
-
-<p>De bewaartermijn van Firebase Analytics-gegevens wordt beheerd in de Firebase-instellingen en volgt het bewaarbeleid van Google. Standaard kan Google Analytics-gegevens gedurende een beperkte periode bewaren; de exacte termijn hangt af van de configuratie van het Firebase-project.</p>
-
-<p>Tax Master streeft ernaar Analytics-gegevens uitsluitend te bewaren voor de periode die nodig is om de app te verbeteren en technische problemen op te lossen.</p>
-
-<h3>7.3 Optionele feedback</h3>
-
-<p>Verzonden feedback kan worden bewaard zolang dit nodig is om de feedback te beoordelen, de app te verbeteren en misbruik of spam te voorkomen.</p>
-
-<p>Als je wilt dat eerder verzonden feedback wordt verwijderd, kun je contact opnemen via <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>. Vermeld bij voorkeur de ongeveer datum en inhoud van de feedback, zonder zelf extra gevoelige gegevens toe te voegen.</p>
-
-<h3>7.4 Update- en datasetgegevens</h3>
-
-<p>Technische verbindingsgegevens zoals IP-adressen en serverlogboeken kunnen door de hosting- of netwerkprovider worden bewaard volgens de bewaartermijnen en beveiligingspraktijken van die provider, onder meer voor beveiliging, misbruikpreventie en dienstverlening.</p>
-
-<h2>8. Deling met derden</h2>
-
-<p>Tax Master deelt geen fiscale antwoorden, berekeningsresultaten of andere inhoud van jouw simulatie met derden.</p>
-
-<p>Tax Master gebruikt wel de volgende dienstverleners:</p>
-
-<h3>8.1 Google Firebase</h3>
-
-<p>Tax Master gebruikt Firebase Analytics en Firebase Firestore, diensten van Google.</p>
-
-<ul>
-    <li><strong>Firebase Analytics:</strong> verwerkt beperkte technische en gebruiksgegevens om de app te verbeteren.</li>
-    <li><strong>Firebase Firestore:</strong> bewaart uitsluitend de feedback die jij expliciet verstuurt.</li>
-</ul>
-
-<p>Meer informatie vind je in het <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacybeleid van Google</a>.</p>
-
-<h3>8.2 Google Play Services</h3>
-
-<p>Google Play Services kan technische gegevens verwerken die nodig zijn voor de installatie, beveiliging, updates en werking van de app op Android. Google kan onder andere apparaatgegevens, app-versie, IP-adres, crashrapporten en systeemactiviteit verwerken wanneer Google-diensten op je toestel contact maken met Googleservers. [72]</p>
-
-<h3>8.3 Updateserver</h3>
-
-<p>Tax Master gebruikt een beveiligde updateserver om fiscale datasets veilig aan te bieden. Deze server verwerkt technische verbindingsgegevens zoals IP-adres en verzoekmetadata, maar ontvangt geen fiscale antwoorden of berekeningsresultaten.</p>
-
-<div class="privacy-box">
-    <p><strong>Geen gegevensverkoop of advertenties:</strong> Tax Master verkoopt geen persoonsgegevens, gebruikt geen advertentienetwerken en deelt jouw fiscale antwoorden of berekeningsresultaten niet met adverteerders, data brokers, verzekeraars, kredietverstrekkers of andere derden.</p>
-</div>
-
-<h2>9. Beveiliging</h2>
-
-<p>Tax Master past technische en organisatorische maatregelen toe om gegevens te beschermen, waaronder:</p>
-
-<ul>
-    <li>Lokale versleuteling van fiscale gegevens met SQLCipher;</li>
-    <li>Gebruik van Android Keystore voor sleutelbeheer;</li>
-    <li>HTTPS/TLS voor netwerkcommunicatie;</li>
-    <li>Geen back-up van appgegevens via Android Auto Backup;</li>
-    <li>Beperking van Firestore-toegang via security rules;</li>
-    <li>Geen opslag van fiscale antwoorden of berekeningsresultaten op servers van Tax Master.</li>
-</ul>
-
-<p>Geen enkel systeem is volledig veilig. De beveiliging van lokale gegevens hangt ook af van de beveiliging van jouw toestel en van de bescherming van je schermvergrendeling.</p>
-
-<h2>10. Jouw rechten</h2>
-
-<p>Als de AVG op jouw situatie van toepassing is, heb je onder meer de volgende rechten:</p>
-
-<ul>
-    <li><strong>Recht op inzage:</strong> je kunt vragen welke persoonsgegevens wij over jou verwerken.</li>
-    <li><strong>Recht op rectificatie:</strong> je kunt vragen om onjuiste persoonsgegevens te corrigeren.</li>
-    <li><strong>Recht op verwijdering:</strong> je kunt vragen om persoonsgegevens te verwijderen, behoudens wettelijke bewaarplichten.</li>
-    <li><strong>Recht op beperking van verwerking:</strong> je kunt vragen om de verwerking tijdelijk te beperken.</li>
-    <li><strong>Recht op bezwaar:</strong> je kunt bezwaar maken tegen verwerking op basis van wettig belang.</li>
-    <li><strong>Recht op gegevensoverdraagbaarheid:</strong> waar van toepassing, kun je vragen om bepaalde gegevens in een gestructureerd, gangbaar en machineleesbaar formaat.</li>
-    <li><strong>Recht om toestemming in te trekken:</strong> je kunt toestemming voor optionele feedback op elk moment intrekken door geen verdere feedback te versturen.</li>
-</ul>
-
-<p>Voor vragen of verzoeken kun je mailen naar <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a>. Wij reageren binnen een redelijke termijn en in elk geval binnen de wettelijke termijnen.</p>
-
-<p>Je kunt ook een klacht indienen bij de <strong>Gegevensbeschermingsautoriteit (GBA)</strong>:</p>
-
-<div class="info-box">
-    <p>
-        <strong>Gegevensbeschermingsautoriteit</strong><br>
-        Drukkersstraat 35<br>
-        1000 Brussel, België<br>
-        Website: <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">www.gegevensbeschermingsautoriteit.be</a><br>
-        E-mail: <a href="mailto:contact@apd-gba.be">contact@apd-gba.be</a>
-    </p>
-</div>
-
-<p>De GBA behandelt dossiers in principe schriftelijk en is ook telefonisch bereikbaar. </p>
-
-<h2>11. Fiscale gegevens verwijderen</h2>
-
-<p>Je kunt jouw lokaal opgeslagen fiscale gegevens op elk moment verwijderen door:</p>
-
-<ul>
-    <li>De app van je Android-toestel te verwijderen; of</li>
-    <li>De opslag- of gegevensverwijderingsopties te gebruiken die in de app beschikbaar zijn.</li>
-</ul>
-
-<p>Omdat fiscale antwoorden en berekeningsresultaten niet naar Tax Master worden verzonden, is er aan onze kant geen kopie van deze gegevens die wij kunnen verwijderen.</p>
-
-<h2>12. Kinderen</h2>
-
-<p>Tax Master is niet specifiek gericht op kinderen. De app is bedoeld voor gebruikers vanaf 16 jaar.</p>
-
-<p>Als je jonger bent dan 16 jaar, gebruik de app dan alleen met toestemming van een ouder, voogd of andere wettelijke vertegenwoordiger.</p>
-
-<h2>13. Internationale gegevensoverdracht</h2>
-
-<p>Tax Master wordt beheerd vanuit België. Fiscale antwoorden en berekeningsresultaten verlaten jouw toestel niet en worden daarom niet internationaal overgedragen door Tax Master.</p>
-
-<p>Technische Analytics-gegevens en optionele feedback kunnen worden verwerkt door Google Firebase. Google gebruikt servers wereldwijd en past beveiligings- en gegevensbeschermingsmaatregelen toe, waaronder maatregelen voor internationale gegevensoverdracht. Meer informatie vind je in het <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacybeleid van Google</a>. </p>
-
-<h2>14. Wijzigingen</h2>
-
-<p>Wij kunnen deze privacyverklaring aanpassen wanneer onze app, diensten, technologie, wetgeving of beveiligingspraktijken wijzigen.</p>
-
-<p>De datum “Laatste wijziging” bovenaan deze pagina wordt telkens aangepast. Bij wezenlijke wijzigingen zullen wij de nieuwe versie in de app of via de Google Play-listing beschikbaar stellen.</p>
-
-<h2>15. Contact</h2>
-
-<div class="info-box">
-    <p>
-        <strong>Tax Master / Illimani Studio</strong><br>
-        Privacy en gegevensbescherming<br>
-        E-mail: <a href="mailto:contact.illimanistudio@gmail.com">contact.illimanistudio@gmail.com</a><br>
-        Locatie: Gent, België
-    </p>
-</div>
-
-<h2>16. Belangrijke fiscale disclaimer</h2>
-
-<p>Tax Master is een hulpmiddel en geen officiële fiscale dienst. De app:</p>
-
-<ul>
-    <li>garandeert geen belastingvoordelen, aftrekposten, terugbetalingen of correcte berekeningen;</li>
-    <li>vervangt geen professioneel fiscaal, juridisch of boekhoudkundig advies;</li>
-    <li>vervangt de officiële belastingaangifte, MyMinfin of Tax-on-web niet;</li>
-    <li>garandeert niet dat alle Belgische belastingregels, uitzonderingen of recente wijzigingen volledig of actueel worden weergegeven.</li>
-</ul>
-
-<p>Jij blijft als enige verantwoordelijk voor de juistheid van de ingevoerde gegevens, de controle van de resultaten en het correct en tijdig indienen van je belastingaangifte.</p>
-
-<p>Voor officiële informatie en hulp kun je terecht bij de FOD Financiën via <a href="https://financien.belgium.be" target="_blank" rel="noopener">financien.belgium.be</a>. </p>
-
-<h2>17. Onze privacybelofte</h2>
-
-<div class="privacy-box">
-    <ul>
-        <li><span class="checkmark">✅</span> <strong>Geen account vereist.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Fiscale antwoorden en resultaten blijven lokaal.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Geen verkoop van gegevens.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Geen advertenties.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Transparante Firebase-gebruik.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Optionele feedback met expliciete bevestiging.</strong></li>
-        <li><span class="checkmark">✅</span> <strong>Minimale gegevensverzameling.</strong></li>
-    </ul>
-</div>
-
-<p><strong>Jouw fiscale antwoorden en berekeningsresultaten blijven op jouw toestel. Tax Master verzendt, deelt of verkoopt deze gegevens niet.</strong></p>
-
-<hr>
-
-<div class="footer">
-    <p>Door Tax Master te gebruiken, bevestig je dat je deze privacyverklaring hebt gelezen en begrepen.</p>
-    <p>© 2026 Tax Master / Illimani Studio. Alle rechten voorbehouden.</p>
-</div>
-
+<main>
+    <header>
+        <h1>Privacybeleid - Tax Master</h1>
+
+        <p class="date">
+            Laatste wijziging:
+            <time datetime="2026-11-14">14 november 2026</time><br>
+            Ingangsdatum:
+            <time datetime="2026-11-14">14 november 2026</time>
+        </p>
+
+        <p>
+            Tax Master helpt je Belgische fiscale informatie te
+            structureren en indicatieve berekeningen te maken.
+            In deze privacyverklaring lees je welke gegevens op
+            je toestel blijven, welke gegevens worden verwerkt
+            wanneer je feedback geeft of datasets downloadt,
+            en hoe je jouw privacyrechten kunt uitoefenen.
+        </p>
+    </header>
+
+    <section aria-labelledby="samenvatting">
+        <h2 id="samenvatting">In het kort</h2>
+
+        <div class="privacy-box">
+            <ul>
+                <li>
+                    Je fiscale antwoorden, simulaties en
+                    berekeningsresultaten worden lokaal op je
+                    toestel verwerkt en opgeslagen. De app
+                    uploadt ze niet naar onze feedback- of
+                    updateserver.
+                </li>
+                <li>
+                    Je hebt geen Tax Master-account nodig.
+                </li>
+                <li>
+                    Firebase Analytics is in deze appversie
+                    uitgeschakeld. We gebruiken deze dienst
+                    dus niet voor gebruiksanalyse.
+                </li>
+                <li>
+                    Feedback geven is vrijwillig. Alleen de
+                    feedback die je indient en de daarbij
+                    beschreven metadata worden naar Firebase
+                    Firestore verzonden.
+                </li>
+                <li>
+                    Voor datasetdownloads en beveiliging worden
+                    beperkte technische verbindingsgegevens
+                    verwerkt.
+                </li>
+                <li>
+                    We verkopen geen persoonsgegevens en
+                    gebruiken geen advertentienetwerken.
+                </li>
+            </ul>
+        </div>
+
+        <p>
+            Je kunt ons bereiken via
+            <a href="mailto:contact.illimanistudio@gmail.com">
+                contact.illimanistudio@gmail.com</a>.
+            Je rechten en de manier waarop je een verzoek
+            kunt indienen, staan in onderdeel 10.
+        </p>
+    </section>
+
+    <section aria-labelledby="verantwoordelijke">
+        <h2 id="verantwoordelijke">1. Wie verantwoordelijk is</h2>
+
+        <p>
+            De verwerkingsverantwoordelijke voor de in deze
+            verklaring beschreven verwerkingen door Tax Master is:
+        </p>
+
+        <div class="info-box">
+            <address>
+                Mauro Agreda De Ro<br>
+                Handelend onder de naam Illimani Studio<br>
+                Aanbieder van Tax Master<br>
+                Gent, België<br>
+                E-mail:
+                <a href="mailto:contact.illimanistudio@gmail.com">
+                    contact.illimanistudio@gmail.com</a>
+            </address>
+        </div>
+
+        <p>
+            Illimani Studio is hier de naam waaronder de app
+            wordt aangeboden, niet de aanduiding van een
+            afzonderlijke vennootschap.
+        </p>
+    </section>
+
+    <section aria-labelledby="toepassing">
+        <h2 id="toepassing">2. Wanneer deze verklaring geldt</h2>
+
+        <p>
+            Deze verklaring beschrijft de verwerking in verband
+            met de huidige Android-versie van Tax Master,
+            de feedbackfunctie, de updateservice, contact via
+            e-mail en het raadplegen van onze online documenten.
+        </p>
+
+        <p>
+            Waar Google, Cloudflare of GitHub gegevens voor
+            eigen doeleinden verwerkt, geven hun eigen
+            privacyverklaringen daar aanvullende informatie over.
+            Dat neemt onze verantwoordelijkheid voor de
+            verwerkingen waarvoor wij verantwoordelijk zijn
+            niet weg.
+        </p>
+
+        <p>
+            Aanvaarding van onze gebruiksvoorwaarden is niet
+            hetzelfde als toestemming voor optionele
+            gegevensverwerking. Het lezen van deze
+            privacyverklaring geldt evenmin als toestemming.
+        </p>
+    </section>
+
+    <section aria-labelledby="gegevens">
+        <h2 id="gegevens">3. Welke gegevens worden verwerkt</h2>
+
+        <h3>3.1 Fiscale informatie op je toestel</h3>
+
+        <p>
+            Afhankelijk van de onderdelen die je gebruikt,
+            kun je informatie invoeren over bijvoorbeeld
+            inkomsten, kosten, gezinssituatie, personen ten laste,
+            vastgoed, investeringen en pensioenen.
+            De app gebruikt je antwoorden om vragen te tonen,
+            simulaties te bewaren en indicatieve resultaten
+            te berekenen.
+        </p>
+
+        <p>
+            Deze fiscale antwoorden, simulatiegegevens en
+            berekeningsresultaten blijven binnen de lokale
+            opslag en verwerking van de app. Tax Master
+            voegt ze niet toe aan feedbackberichten of
+            verzoeken aan de updateserver.
+            Wij ontvangen daardoor geen serverkopie van je
+            simulaties.
+        </p>
+
+        <p>
+            Dat geldt niet voor informatie die je zelf
+            overneemt in een feedbackbericht of e-mail.
+            Verstuur daarin daarom geen persoonlijke
+            belastingdocumenten of andere gevoelige gegevens.
+        </p>
+
+        <h3>3.2 Algemene feedback</h3>
+
+        <p>
+            Via het feedbackscherm kun je vrijwillig een
+            tekstbericht van maximaal 1.000 tekens indienen.
+            Je bevestigt eerst met het daarvoor bestemde
+            selectievakje dat je begrijpt waarvoor de feedback
+            wordt verwerkt. Daarna kun je de feedback indienen
+            met de verzendknop of de beschikbare
+            toetsenbordactie.
+        </p>
+
+        <p>
+            De volgende inhoud wordt naar Firebase Firestore
+            verzonden:
+        </p>
+
+        <ul>
+            <li>De feedbacktekst die je zelf invoert.</li>
+            <li>Het aanmaaktijdstip volgens je toestel.</li>
+            <li>De door de app meegestuurde appversie.</li>
+            <li>De taalinstelling die de app meestuurt.</li>
+        </ul>
+
+        <p>
+            We voegen geen naam, e-mailadres, gebruikersaccount,
+            fiscale antwoorden of berekeningsresultaten aan
+            deze feedback toe. Je eigen tekst kan uiteraard
+            wel persoonsgegevens bevatten als je die zelf
+            vermeldt.
+        </p>
+
+        <h3>3.3 Feedback over een vraag</h3>
+
+        <p>
+            Je kunt bij een vraag vrijwillig een
+            feedbackcategorie kiezen, zoals
+            “Fout”, “Niet duidelijk” of “Niet relevant”.
+            Door een categorie te kiezen, dien je de melding
+            in. Deze functie heeft niet dezelfde
+            bevestigingscheckbox als het algemene
+            feedbackscherm.
+        </p>
+
+        <p>Deze melding bevat:</p>
+
+        <ul>
+            <li>De identificatie van de betreffende vraag.</li>
+            <li>De versie van die vraag.</li>
+            <li>De gekozen feedbackcategorie.</li>
+            <li>Het aanmaaktijdstip volgens je toestel.</li>
+            <li>De door de app meegestuurde appversie.</li>
+            <li>De taalinstelling die de app meestuurt.</li>
+        </ul>
+
+        <p>
+            Je antwoord op de vraag en je
+            berekeningsresultaten worden niet toegevoegd.
+            De vraagidentificatie laat wel zien op welk
+            onderwerp je melding betrekking heeft.
+        </p>
+
+        <h3>3.4 Opslag en verzending van feedback</h3>
+
+        <p>
+            Feedback wordt eerst lokaal opgeslagen en daarna
+            automatisch op de achtergrond naar Firebase
+            Firestore verzonden wanneer een geschikte
+            internetverbinding beschikbaar is.
+            Na een bevestigde upload verwijdert de app de
+            feedback uit de lokale verzendwachtrij.
+            Feedback die niet aan de invoercontroles voldoet,
+            kan uit de wachtrij worden verwijderd zonder
+            verzending.
+        </p>
+
+        <p>
+            Firestore geeft elk feedbackdocument een eigen
+            documentidentificatie. Die dient om afzonderlijke
+            meldingen te onderscheiden en is geen
+            gebruikersidentificatie. Wij voegen geen
+            gebruikerstag, account-ID, apparaat-ID of andere
+            blijvende gebruikersidentificatie toe aan de
+            feedbackinhoud.
+        </p>
+
+        <p>
+            Dit betekent niet dat feedback gegarandeerd
+            anoniem is. Je kunt jezelf bijvoorbeeld
+            identificeren door persoonsgegevens in je
+            feedbacktekst te vermelden.
+        </p>
+
+        <p>
+            Bij de netwerkverbinding met Google kunnen ook
+            technische verbindings- en dienstgegevens worden
+            verwerkt die nodig zijn voor het leveren,
+            onderhouden en beveiligen van de dienst.
+            De opsommingen hierboven beschrijven de
+            inhoud die Tax Master zelf aan het
+            feedbackdocument toevoegt.
+        </p>
+
+        <div class="important-box">
+            <p>
+                Deel geen rijksregisternummer,
+                bankrekeningnummer, wachtwoord,
+                volledige belastingaangifte, fiscale fiche,
+                identiteitsdocument of gevoelige gegevens
+                over jezelf of anderen in feedback.
+                De feedbackfunctie is geen kanaal voor
+                persoonlijke fiscale dossiers.
+            </p>
+        </div>
+
+        <h3>3.5 Datasetdownloads</h3>
+
+        <p>
+            Tax Master kan controleren of er een nieuwe
+            fiscale dataset beschikbaar is en die dataset
+            downloaden via een updateserver op
+            Cloudflare-infrastructuur.
+        </p>
+
+        <p>
+            Het verzoek bevat de identificatie van de
+            gevraagde belastingversie en, bij een
+            pakketdownload, het publicatievolgnummer.
+            Daarnaast worden de technische gegevens van
+            de internetverbinding verwerkt, zoals het
+            IP-adres en verzoekmetadata.
+            De app voegt geen fiscale antwoorden,
+            ingevoerde bedragen of berekeningsresultaten
+            aan deze verzoeken toe.
+        </p>
+
+        <h3>3.6 Beveiliging en misbruikpreventie</h3>
+
+        <p>
+            Om onze updateservice beschikbaar en betrouwbaar
+            te houden, gebruiken we Cloudflare om overmatig
+            verkeer te beperken. Daarbij wordt het IP-adres
+            gebruikt om het aantal aanvragen te begrenzen.
+            Onze applicatiecode slaat het IP-adres hiervoor
+            niet op in een afzonderlijke database of
+            IP-logboek.
+        </p>
+
+        <p>
+            Wij gebruiken deze beveiligingsgegevens niet om
+            feedback aan jouw identiteit te koppelen,
+            niet voor advertenties en niet om een
+            gedragsprofiel op te bouwen.
+            Je fiscale antwoorden en berekeningsresultaten
+            worden niet met updateverzoeken meegestuurd.
+        </p>
+
+        <p>
+            De updateservice kan bij technische problemen
+            foutinformatie vastleggen, zoals een
+            verzoekidentificatie, het opgevraagde pad en
+            een foutmelding. De eigen logberichten in de
+            updateservice bevatten geen bewust toegevoegd
+            IP-adres of inhoud van je simulatie.
+            Cloudflare kan daarnaast infrastructuur- en
+            beveiligingsgegevens verwerken voor zijn
+            dienstverlening.
+        </p>
+
+        <h3>3.7 E-mailcontact</h3>
+
+        <p>
+            Als je ons e-mailt, ontvangen we je e-mailadres,
+            eventuele afzendernaam, de inhoud van je bericht,
+            meegestuurde bijlagen en de gebruikelijke
+            e-mailmetadata. We gebruiken die informatie
+            om je vraag, klacht of privacyverzoek te behandelen
+            en zo nodig contact met je op te nemen.
+        </p>
+
+        <p>
+            Stuur alleen informatie die voor je vraag nodig
+            is. Stuur geen volledige belastingaangiften,
+            wachtwoorden of identiteitsdocumenten mee
+            tenzij we na beoordeling uitdrukkelijk aangeven
+            dat specifieke informatie noodzakelijk is.
+        </p>
+
+        <h3>3.8 Instellingen en aanvaarding van voorwaarden</h3>
+
+        <p>
+            De app bewaart lokaal instellingen die nodig
+            zijn om je voorkeuren en appstatus te onthouden,
+            zoals je thema, geïnstalleerde datasetversies
+            en de versie en het tijdstip van je aanvaarding
+            van de gebruiksvoorwaarden.
+            Deze lokale registraties vormen geen
+            gebruikersaccount.
+        </p>
+
+        <h3>3.9 Online documenten en externe links</h3>
+
+        <p>
+            Onze online privacyverklaring,
+            gebruiksvoorwaarden en veelgestelde vragen
+            worden via GitHub Pages aangeboden.
+            Wanneer je die online pagina’s bezoekt,
+            verwerkt GitHub technische bezoekgegevens,
+            zoals een IP-adres en gegevens over het verzoek.
+            We voegen aan deze documentpagina’s geen eigen
+            advertentie- of analysetrackers toe.
+        </p>
+
+        <p>
+            De bij de app meegeleverde HTML-documenten
+            kunnen lokaal worden gelezen. Voor het lezen
+            van die lokale bestanden hoeft geen verbinding
+            met GitHub te worden gemaakt.
+            Als je een externe link opent, wordt wel een
+            verbinding met de betreffende website gemaakt.
+        </p>
+    </section>
+
+    <section aria-labelledby="analytics">
+        <h2 id="analytics">4. Geen gebruiksanalyse in deze appversie</h2>
+
+        <p>
+            Firebase Analytics is in deze appversie
+            gedeactiveerd. We gebruiken Firebase Analytics
+            daardoor niet om je appgebruik te meten.
+            Deze versie bevat ook geen door Tax Master
+            geïntegreerde Firebase
+            Crashlytics-crashrapportage.
+        </p>
+
+        <p>
+            Dat staat los van de gegevens die nodig zijn
+            voor vrijwillige feedback, datasetdownloads,
+            beveiliging en e-mailcontact.
+            Ook kunnen Android, Google Play en andere
+            platformdiensten zelfstandig gegevens
+            verwerken volgens hun eigen instellingen
+            en privacybeleid.
+        </p>
+
+        <p>
+            Als we later gebruiksanalyse of aanvullende
+            diagnostiek toevoegen, werken we deze
+            verklaring vooraf bij en vragen we
+            toestemming waar dat vereist is.
+            Aanvaarding van de gebruiksvoorwaarden
+            wordt daarvoor niet als vervangende
+            toestemming gebruikt.
+        </p>
+    </section>
+
+    <section aria-labelledby="doelen">
+        <h2 id="doelen">5. Doeleinden en rechtsgronden</h2>
+
+        <p>
+            Voor zover de beschreven gegevens
+            persoonsgegevens zijn, verwerken we ze voor
+            de volgende doeleinden:
+        </p>
+
+        <h3>De door jou gevraagde functies leveren</h3>
+
+        <p>
+            Voor lokale simulaties, het bewaren van
+            noodzakelijke instellingen en het leveren
+            van gevraagde datasetupdates verwerken we
+            gegevens die noodzakelijk zijn om de
+            appfuncties aan te bieden.
+            Voor zover hiervoor een verwerking onder onze
+            verantwoordelijkheid plaatsvindt, baseren
+            we die op de uitvoering van de overeenkomst
+            voor het gebruik van de app
+            (artikel 6, lid 1, onder b, AVG).
+        </p>
+
+        <h3>Algemene feedback beoordelen</h3>
+
+        <p>
+            Voor de vrijwillige verwerking van algemene
+            feedback baseren we ons op je toestemming
+            (artikel 6, lid 1, onder a, AVG).
+            Je kunt de app gebruiken zonder algemene
+            feedback te versturen.
+        </p>
+
+        <h3>Vraagmeldingen beoordelen en verbeteringen uitvoeren</h3>
+
+        <p>
+            Voor het beoordelen van door jou ingediende
+            gestructureerde vraagmeldingen baseren we
+            ons, voor zover daarbij persoonsgegevens
+            worden verwerkt, op ons gerechtvaardigd
+            belang om fouten te vinden en de inhoud
+            van de app te verbeteren
+            (artikel 6, lid 1, onder f, AVG).
+            De melding wordt niet automatisch aangemaakt:
+            je kiest zelf een feedbackcategorie.
+        </p>
+
+        <h3>Beveiliging en technische werking</h3>
+
+        <p>
+            Voor het beperken van misbruik,
+            onderzoeken van storingen en beschermen
+            van de updateservice baseren we ons op ons
+            gerechtvaardigd belang om een betrouwbare
+            en veilige dienst te leveren
+            (artikel 6, lid 1, onder f, AVG).
+            We beperken die verwerking tot wat voor
+            dat doel noodzakelijk is.
+        </p>
+
+        <h3>Contact en privacyverzoeken</h3>
+
+        <p>
+            Voor gewone supportvragen baseren we ons
+            op de uitvoering van onze dienstverlening
+            waar de vraag daarmee samenhangt, en anders
+            op ons gerechtvaardigd belang om ontvangen
+            vragen te beantwoorden.
+            Voor het behandelen van wettelijke
+            privacyverzoeken en andere toepasselijke
+            wettelijke verplichtingen baseren we ons
+            op artikel 6, lid 1, onder c, AVG.
+        </p>
+
+        <p>
+            Wanneer informatie noodzakelijk is voor
+            een concrete klacht of rechtsvordering,
+            kan bewaring berusten op een wettelijke
+            verplichting of ons gerechtvaardigd belang
+            om onze rechten vast te stellen,
+            uit te oefenen of te verdedigen.
+        </p>
+
+        <p>
+            We gebruiken vrijwillig ontvangen
+            persoonsgegevens niet zonder passende
+            grondslag voor nieuwe, onverenigbare
+            doeleinden.
+        </p>
+    </section>
+
+    <section aria-labelledby="bewaring">
+        <h2 id="bewaring">6. Hoe lang gegevens worden bewaard</h2>
+
+        <h3>6.1 Lokale appgegevens</h3>
+
+        <p>
+            Fiscale antwoorden, simulaties,
+            berekeningsresultaten en instellingen
+            blijven op je toestel totdat je ze via
+            beschikbare functies verwijdert of de
+            appgegevens wist. Je kunt de appgegevens
+            ook verwijderen via de Android-instellingen
+            of door de app te deïnstalleren.
+            De precieze benaming van die opties
+            verschilt per toestel.
+        </p>
+
+        <p>
+            Bestanden of kopieën die je zelf buiten
+            de app hebt opgeslagen of gedeeld,
+            vallen daar niet automatisch onder.
+        </p>
+
+        <h3>6.2 Lokale feedbackwachtrij</h3>
+
+        <p>
+            Feedback blijft lokaal in de verzendwachtrij
+            totdat de verzending slaagt, de app de
+            feedback wegens ongeldige inhoud verwijdert,
+            of de lokale appgegevens worden verwijderd.
+            Verwijdering van al verzonden feedback uit
+            Firestore gebeurt niet door alleen de app
+            van je toestel te verwijderen.
+        </p>
+
+        <h3>6.3 Verzonden feedback</h3>
+
+        <p>
+            We bewaren verzonden feedback normaal
+            maximaal zes maanden na ontvangst.
+            Wanneer meer tijd nodig is om een melding
+            te onderzoeken of een verbetering uit te
+            voeren, kunnen we de betreffende feedback
+            langer bewaren, maar uiterlijk twaalf
+            maanden na ontvangst.
+            Daarna verwijderen we de feedback.
+        </p>
+
+        <p>
+            Je kunt eerder om verwijdering vragen.
+            Als een beperkt deel van de informatie
+            noodzakelijk is voor een concrete
+            wettelijke verplichting of een lopend
+            juridisch geschil, kan uitsluitend dat
+            noodzakelijke deel afzonderlijk worden
+            bewaard zolang die reden bestaat.
+            Het wordt dan niet verder als gewone
+            productfeedback gebruikt.
+        </p>
+
+        <h3>6.4 Supportmails</h3>
+
+        <p>
+            Gewone supportmails verwijderen we uiterlijk
+            twaalf maanden nadat de vraag of conversatie
+            is afgehandeld.
+            Informatie die noodzakelijk is voor een
+            lopende klacht, een juridisch geschil
+            of een toepasselijke wettelijke
+            verplichting kan langer worden bewaard.
+            We beperken dit tot de noodzakelijke
+            informatie en verwijderen die zodra de
+            reden voor verdere bewaring vervalt.
+        </p>
+
+        <h3>6.5 Technische beveiligingsgegevens</h3>
+
+        <p>
+            Tellergegevens voor verkeersbegrenzing en
+            technische dienst- en beveiligingslogs
+            worden verwerkt binnen de systemen en
+            bewaarschema’s van de betrokken provider.
+            De ingestelde telperiode voor
+            verkeersbegrenzing is niet hetzelfde als
+            een bewaartermijn voor alle
+            infrastructuurlogs.
+        </p>
+
+        <p>
+            Onze Worker maakt geen afzonderlijk
+            IP-adressenbestand aan.
+            Voor technische logs onder onze controle
+            is de noodzaak voor foutopsporing,
+            beveiliging of incidentafhandeling
+            bepalend voor de bewaring.
+            Ze worden niet gebruikt om een
+            gebruiksgeschiedenis van je fiscale
+            activiteiten op te bouwen.
+        </p>
+
+        <p>
+            Verwijdering uit actieve systemen betekent
+            niet noodzakelijk dat elke technisch
+            resterende kopie bij een provider op
+            hetzelfde moment verdwijnt.
+            Eventuele herstel- of back-upkopieën
+            volgen de toepasselijke verwijdercycli
+            van die provider.
+        </p>
+    </section>
+
+    <section aria-labelledby="ontvangers">
+        <h2 id="ontvangers">7. Wie gegevens kan ontvangen</h2>
+
+        <p>
+            Gegevens worden alleen toegankelijk gemaakt
+            voor zover dat nodig is voor de beschreven
+            doeleinden.
+            Feedback en supportmails zijn niet bedoeld
+            voor openbare publicatie.
+        </p>
+
+        <ul>
+            <li>
+                Google Firebase / Google Cloud:
+                voor Firestore-feedbackopslag en de
+                technische levering en beveiliging
+                daarvan.
+            </li>
+            <li>
+                Google Gmail:
+                voor het ontvangen en beantwoorden
+                van e-mails aan ons contactadres.
+            </li>
+            <li>
+                Cloudflare:
+                voor het aanbieden van fiscale
+                datasets, verkeersbegrenzing en
+                infrastructuurbeveiliging.
+            </li>
+            <li>
+                GitHub:
+                voor het aanbieden van onze
+                online documentpagina’s.
+            </li>
+        </ul>
+
+        <p>
+            Wanneer we een leverancier als verwerker
+            inschakelen, moeten daarvoor passende
+            afspraken over gegevensbescherming gelden.
+            Voor eventuele eigen verwerkingen van de
+            leverancier geldt ook diens eigen
+            privacyinformatie.
+        </p>
+
+        <p>
+            We kunnen noodzakelijke gegevens verstrekken
+            als een geldige wettelijke verplichting
+            dat vereist of wanneer dit rechtmatig
+            noodzakelijk is voor een concrete
+            rechtsvordering.
+            We verkopen geen persoonsgegevens.
+        </p>
+
+        <p>Aanvullende informatie van de providers:</p>
+
+        <ul>
+            <li>
+                <a href="https://firebase.google.com/support/privacy"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Privacy en beveiliging bij Firebase
+                </a>
+            </li>
+            <li>
+                <a href="https://policies.google.com/privacy"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Privacybeleid van Google
+                </a>
+            </li>
+            <li>
+                <a href="https://www.cloudflare.com/privacypolicy/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Privacybeleid van Cloudflare
+                </a>
+            </li>
+            <li>
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Privacyverklaring van GitHub
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section aria-labelledby="internationaal">
+        <h2 id="internationaal">8. Internationale verwerking</h2>
+
+        <p>
+            Tax Master wordt vanuit België beheerd.
+            De lokale fiscale antwoorden en
+            berekeningsresultaten worden door de app
+            niet naar onze servers verzonden.
+        </p>
+
+        <p>
+            De genoemde providers gebruiken internationale
+            infrastructuur. Daardoor kunnen feedback,
+            correspondentie of technische dienstgegevens
+            buiten de Europese Economische Ruimte
+            worden verwerkt of van daaruit toegankelijk
+            zijn. We beloven daarom geen uitsluitend
+            Belgische of Europese verwerking.
+        </p>
+
+        <p>
+            Voor doorgiften waarvoor wij verantwoordelijk
+            zijn, moet een geldige doorgiftegrondslag
+            gelden. Afhankelijk van de betrokken dienst,
+            ontvanger en bestemming kan dat een
+            toepasselijk adequaatheidsbesluit of
+            passende waarborgen zijn, zoals de
+            standaardcontractbepalingen van de Europese
+            Commissie, zo nodig met aanvullende maatregelen.
+        </p>
+
+        <p>
+            Je kunt via ons contactadres informatie
+            vragen over de waarborgen die voor een
+            concrete verwerking gelden en hoe je
+            daarvan een kopie kunt verkrijgen,
+            met bescherming van vertrouwelijke
+            informatie waar nodig.
+        </p>
+    </section>
+
+    <section aria-labelledby="beveiliging">
+        <h2 id="beveiliging">9. Beveiliging</h2>
+
+        <p>
+            We beperken de gegevens die de app naar
+            servers verstuurt en gebruiken beveiligde
+            verbindingen voor feedback en
+            datasetdownloads.
+            De updates worden vóór installatie op
+            hun digitale handtekening en
+            pakketkenmerken gecontroleerd.
+            De toegang van appclients tot Firestore
+            wordt beperkt met beveiligingsregels.
+        </p>
+
+        <p>
+            Fiscale gegevens worden binnen de
+            appopslag van je toestel bewaard.
+            Bescherm je toestel met een
+            schermvergrendeling en houd Android
+            en de app bijgewerkt.
+            Geen enkele beveiligingsmaatregel
+            biedt een absolute garantie.
+        </p>
+
+        <p>
+            De app vraagt voor de beschreven
+            kernfuncties geen toegang tot je
+            contacten, camera, microfoon of
+            GPS-locatie. Technische netwerkgegevens,
+            waaronder een IP-adres, zijn daarvan
+            te onderscheiden.
+        </p>
+
+        <p>
+            We gebruiken de gegevens niet voor
+            advertenties, kredietbeoordeling,
+            verzekeringsprofilering of beslissingen
+            over werkgelegenheid.
+            We nemen geen uitsluitend geautomatiseerde
+            beslissingen over jou met rechtsgevolgen
+            of vergelijkbare aanzienlijke gevolgen.
+            De fiscale resultaten in de app zijn
+            hulpmiddelen, geen bindende beslissingen.
+        </p>
+    </section>
+
+    <section aria-labelledby="rechten">
+        <h2 id="rechten">10. Jouw rechten en keuzes</h2>
+
+        <p>
+            Afhankelijk van de verwerking en de
+            toepasselijke wettelijke voorwaarden
+            kun je gebruikmaken van de volgende
+            rechten:
+        </p>
+
+        <ul>
+            <li>
+                Inzage in persoonsgegevens die
+                wij over jou verwerken.
+            </li>
+            <li>
+                Correctie van onjuiste gegevens
+                en aanvulling van onvolledige
+                gegevens.
+            </li>
+            <li>
+                Verwijdering van persoonsgegevens.
+            </li>
+            <li>
+                Beperking van een verwerking.
+            </li>
+            <li>
+                Overdraagbaarheid van gegevens
+                wanneer de wettelijke voorwaarden
+                daarvoor gelden.
+            </li>
+            <li>
+                Bezwaar tegen verwerking op basis
+                van een gerechtvaardigd belang,
+                vanwege jouw specifieke situatie.
+            </li>
+            <li>
+                Intrekking van toestemming wanneer
+                een verwerking daarop is gebaseerd.
+            </li>
+        </ul>
+
+        <h3>Toestemming voor algemene feedback intrekken</h3>
+
+        <p>
+            Je kunt ons mailen om je toestemming voor
+            verdere verwerking van eerder verzonden
+            algemene feedback in te trekken.
+            Intrekking verandert niets aan de
+            rechtmatigheid van de verwerking vóór
+            die intrekking.
+            Alleen geen nieuwe feedback versturen
+            geldt niet als intrekking voor al
+            verzonden feedback.
+        </p>
+
+        <h3>Een melding terugvinden</h3>
+
+        <p>
+            Omdat Tax Master geen gebruikersaccount
+            gebruikt en feedback niet automatisch
+            aan een naam koppelt, kunnen we een
+            melding niet altijd op basis van je
+            e-mailadres terugvinden.
+            Vermeld zo nodig een geschat tijdstip,
+            de betreffende vraag of een kort,
+            niet-gevoelig tekstfragment.
+        </p>
+
+        <p>
+            We vragen alleen aanvullende informatie
+            die redelijkerwijs nodig is om het
+            verzoek te behandelen of je bevoegdheid
+            te controleren.
+            Stuur niet uit eigen beweging een
+            identiteitsbewijs.
+            We verzamelen geen extra
+            identificatiegegevens uitsluitend om
+            voorheen niet-identificeerbare
+            gegevens alsnog aan iemand te koppelen.
+        </p>
+
+        <h3>Contact en antwoordtermijn</h3>
+
+        <p>
+            Stuur je verzoek naar
+            <a href="mailto:contact.illimanistudio@gmail.com">
+                contact.illimanistudio@gmail.com</a>.
+            We reageren zonder onnodige vertraging
+            en in beginsel binnen één maand na
+            ontvangst.
+            Als een wettelijke verlenging nodig
+            is vanwege de complexiteit of het
+            aantal verzoeken, laten we dat binnen
+            die eerste maand weten, met de reden.
+        </p>
+
+        <p>
+            Als we een verzoek niet of niet volledig
+            kunnen uitvoeren, leggen we uit waarom.
+            Het verwijderen van de app verwijdert
+            geen eerder verzonden feedback of
+            e-mails uit onze systemen.
+        </p>
+
+        <h3>Een klacht indienen</h3>
+
+        <p>
+            Je kunt een klacht indienen bij de
+            Belgische Gegevensbeschermingsautoriteit:
+            <a href="https://www.gegevensbeschermingsautoriteit.be"
+               target="_blank"
+               rel="noopener noreferrer">
+                www.gegevensbeschermingsautoriteit.be</a>.
+            Je kunt ook terecht bij een andere
+            bevoegde toezichthouder, bijvoorbeeld
+            in het EU-land waar je gewoonlijk
+            woont of werkt.
+            Je hoeft niet eerst een klacht bij
+            ons in te dienen.
+        </p>
+    </section>
+
+    <section aria-labelledby="jongeren">
+        <h2 id="jongeren">11. Jongere gebruikers</h2>
+
+        <p>
+            Tax Master is niet specifiek op kinderen
+            gericht. De beoogde doelgroep bestaat
+            uit gebruikers vanaf 16 jaar.
+            Dit is de gekozen doelgroep van de app,
+            geen algemene uitspraak over de
+            wettelijke toestemmingsleeftijd.
+        </p>
+
+        <p>
+            Als je minderjarig bent, vraag dan hulp
+            van een ouder of wettelijke
+            vertegenwoordiger wanneer je twijfelt
+            over het gebruik van de app,
+            je fiscale situatie of het delen van
+            gegevens.
+            Neem contact met ons op als je denkt
+            dat onbedoeld persoonsgegevens van
+            een kind zijn doorgestuurd.
+        </p>
+    </section>
+
+    <section aria-labelledby="overheid">
+        <h2 id="overheid">12. Onafhankelijk van de overheid</h2>
+
+        <div class="info-box">
+            <p>
+                Tax Master is een onafhankelijke,
+                niet-officiële app.
+                De app is niet verbonden aan,
+                goedgekeurd door of beheerd door
+                de FOD Financiën, MyMinfin,
+                Tax-on-web of een andere
+                Belgische overheidsinstantie.
+            </p>
+        </div>
+
+        <p>
+            Tax Master dient geen officiële
+            belastingaangifte voor je in en
+            verstrekt geen persoonlijk
+            professioneel fiscaal advies.
+            Controleer belangrijke informatie
+            en indicatieve resultaten via
+            officiële bronnen of een
+            bevoegde adviseur.
+            Dit beperkt onze wettelijke
+            verantwoordelijkheden niet.
+        </p>
+
+        <p>
+            Officiële informatie over je
+            belastingaangifte vind je bij de
+            <a href="https://financien.belgium.be/nl/particulieren/belastingaangifte"
+               target="_blank"
+               rel="noopener noreferrer">
+                FOD Financiën: Mijn belastingaangifte</a>.
+        </p>
+    </section>
+
+    <section aria-labelledby="wijzigingen">
+        <h2 id="wijzigingen">13. Wijzigingen in dit beleid</h2>
+
+        <p>
+            We werken deze verklaring bij wanneer
+            de app of onze gegevensverwerking
+            verandert.
+            De datum bovenaan geeft aan wanneer
+            deze versie voor het laatst is
+            aangepast.
+            Bij belangrijke wijzigingen informeren
+            we je op een passende manier,
+            bijvoorbeeld via een melding in
+            de app.
+        </p>
+
+        <p>
+            Als een nieuwe verwerking toestemming
+            vereist, vragen we die voordat we
+            met die verwerking beginnen.
+            Alleen de app blijven gebruiken of
+            een bijgewerkt privacybeleid
+            beschikbaar stellen vervangt die
+            toestemming niet.
+        </p>
+    </section>
+
+    <section aria-labelledby="contact">
+        <h2 id="contact">14. Contact</h2>
+
+        <p>
+            Vragen over je privacy, een
+            verwijderverzoek of een andere
+            vraag over gegevensbescherming?
+            Je kunt rechtstreeks contact
+            opnemen met:
+        </p>
+
+        <div class="info-box">
+            <address>
+                Mauro Agreda De Ro<br>
+                Illimani Studio / Tax Master<br>
+                <a href="mailto:contact.illimanistudio@gmail.com">
+                    contact.illimanistudio@gmail.com</a>
+            </address>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            Je fiscale antwoorden en
+            berekeningsresultaten blijven
+            lokaal in de app.
+            Feedback delen is jouw keuze.
+        </p>
+        <p>
+            © 2026 Mauro Agreda De Ro — Illimani Studio / Tax Master.
+        </p>
+    </footer>
+</main>
 </body>
 </html>
